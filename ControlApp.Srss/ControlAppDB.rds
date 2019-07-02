@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ControlAppDB">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=malignant.database.windows.net;Initial Catalog=ControlAppDev;User ID=malignant;Password=GEServerD3*;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=FalsenIntent=ReadWrite;MultiSubnetFailover=False</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>3760d4fc-4ce8-4db0-83fb-181b9faa2552</DataSourceID>
+</RptDataSource>

@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ControlAppDev" Class="sqlConnectionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=malignant.database.windows.net;Initial Catalog=ControlAppDev;User ID=malignant;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="ControlApp.DataAccess.Properties.Settings" SettingsPropertyName="ControlAppDevConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[Log]" Member="Logs">
+    <Type Name="Log">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Thread" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="[Level]" Member="Level" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Logger" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="VarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="Exception" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_AREA" Member="TBL_AREAs">
+    <Type Name="TBL_AREA">
+      <Column Name="ID_AREA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_DPT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AREA_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AREA_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_AREA_TBL_POSITION" Member="TBL_POSITIONs" ThisKey="ID_AREA" OtherKey="ID_AREA" Type="TBL_POSITION" />
+      <Association Name="TBL_AREA_TBL_USER" Member="TBL_USERs" ThisKey="ID_AREA" OtherKey="ID_AREA" Type="TBL_USER" />
+      <Association Name="TBL_DPT_TBL_AREA" Member="TBL_DPT" ThisKey="ID_DPT" OtherKey="ID_DPT" Type="TBL_DPT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_CUSTOMER" Member="TBL_CUSTOMERs">
+    <Type Name="TBL_CUSTOMER">
+      <Column Name="ID_CUSTOMER" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUSTOMER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_CUSTOMER_TBL_CXC" Member="TBL_CXCs" ThisKey="ID_CUSTOMER" OtherKey="ID_CUSTOMER" Type="TBL_CXC" />
+      <Association Name="TBL_CUSTOMER_TBL_PREPAID" Member="TBL_PREPAIDs" ThisKey="ID_CUSTOMER" OtherKey="ID_CUSTOMER" Type="TBL_PREPAID" />
+      <Association Name="TBL_USER_TBL_CUSTOMER" Member="TBL_USER" ThisKey="CUSTOMER_CREATEBY" OtherKey="ID_USER" Type="TBL_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_CXC" Member="TBL_CXCs">
+    <Type Name="TBL_CXC">
+      <Column Name="ID_CXC" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_CUSTOMER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY_RETREAT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY_RETURN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_CXC" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="BALANCE_CXC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_CUSTOMER_TBL_CXC" Member="TBL_CUSTOMER" ThisKey="ID_CUSTOMER" OtherKey="ID_CUSTOMER" Type="TBL_CUSTOMER" IsForeignKey="true" />
+      <Association Name="TBL_PRODUCT_TBL_CXC" Member="TBL_PRODUCT" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="TBL_PRODUCT" IsForeignKey="true" />
+      <Association Name="TBL_USER_TBL_CXC" Member="TBL_USER" ThisKey="CXC_CREATEBY" OtherKey="ID_USER" Type="TBL_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_DPT" Member="TBL_DPTs">
+    <Type Name="TBL_DPT">
+      <Column Name="ID_DPT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME_DPT" Type="System.String" DbType="VarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE_DPT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEBY_DPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UPDATEBY_DPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE_DPT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATEDATE_DPT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_DPT_TBL_AREA" Member="TBL_AREAs" ThisKey="ID_DPT" OtherKey="ID_DPT" Type="TBL_AREA" />
+      <Association Name="TBL_DPT_TBL_PERMISSION" Member="TBL_PERMISSIONs" ThisKey="ID_DPT" OtherKey="ID_DPT" Type="TBL_PERMISSION" />
+      <Association Name="TBL_DPT_TBL_USER" Member="TBL_USERs" ThisKey="ID_DPT" OtherKey="ID_DPT" Type="TBL_USER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_ORDER" Member="TBL_ORDERs">
+    <Type Name="TBL_ORDER">
+      <Column Name="ID_ORDER" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_PREPAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_DELIVERY" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_PREPAID_TBL_ORDER" Member="TBL_PREPAID" ThisKey="ID_PREPAID" OtherKey="ID_PREPAID" Type="TBL_PREPAID" IsForeignKey="true" />
+      <Association Name="TBL_USER_TBL_ORDER" Member="TBL_USER" ThisKey="ORDER_CREATEBY" OtherKey="ID_USER" Type="TBL_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_PERMISSION" Member="TBL_PERMISSIONs">
+    <Type Name="TBL_PERMISSION">
+      <Column Name="ID_PER" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_DPT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME_PERMISSION" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DESCRIP_PERMISSION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PER_STATE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PER_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_PERMISSION_TBL_ROLE_PERMISSION" Member="TBL_ROLE_PERMISSIONs" ThisKey="ID_PER" OtherKey="ID_PER" Type="TBL_ROLE_PERMISSION" />
+      <Association Name="TBL_DPT_TBL_PERMISSION" Member="TBL_DPT" ThisKey="ID_DPT" OtherKey="ID_DPT" Type="TBL_DPT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_POSITION" Member="TBL_POSITIONs">
+    <Type Name="TBL_POSITION">
+      <Column Name="ID_POSITION" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_AREA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_POSITION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_POSITION_TBL_USER" Member="TBL_USERs" ThisKey="ID_POSITION" OtherKey="ID_POSITION" Type="TBL_USER" />
+      <Association Name="TBL_AREA_TBL_POSITION" Member="TBL_AREA" ThisKey="ID_AREA" OtherKey="ID_AREA" Type="TBL_AREA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_PREPAID" Member="TBL_PREPAIDs">
+    <Type Name="TBL_PREPAID">
+      <Column Name="ID_PREPAID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_CUSTOMER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_TOTAL" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_CASH" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_CHANGE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_BALANCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PREPAID_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_PREPAID_TBL_ORDER" Member="TBL_ORDERs" ThisKey="ID_PREPAID" OtherKey="ID_PREPAID" Type="TBL_ORDER" />
+      <Association Name="TBL_CUSTOMER_TBL_PREPAID" Member="TBL_CUSTOMER" ThisKey="ID_CUSTOMER" OtherKey="ID_CUSTOMER" Type="TBL_CUSTOMER" IsForeignKey="true" />
+      <Association Name="TBL_PRODUCT_TBL_PREPAID" Member="TBL_PRODUCT" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="TBL_PRODUCT" IsForeignKey="true" />
+      <Association Name="TBL_USER_TBL_PREPAID" Member="TBL_USER" ThisKey="PREPAID_CREATEBY" OtherKey="ID_USER" Type="TBL_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_PRODUCT" Member="TBL_PRODUCTs">
+    <Type Name="TBL_PRODUCT">
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TOTAL_PRODUCT" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_PRICE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRODUCT_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_PRODUCT_TBL_CXC" Member="TBL_CXCs" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="TBL_CXC" />
+      <Association Name="TBL_PRODUCT_TBL_PREPAID" Member="TBL_PREPAIDs" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="TBL_PREPAID" />
+      <Association Name="TBL_PRODUCT_TBL_RECEIPT" Member="TBL_RECEIPTs" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="TBL_RECEIPT" />
+      <Association Name="TBL_PRODUCT_TBL_STOCK" Member="TBL_STOCKs" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="TBL_STOCK" />
+      <Association Name="TBL_USER_TBL_PRODUCT" Member="TBL_USER" ThisKey="PRODUCT_CREATEBY" OtherKey="ID_USER" Type="TBL_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_RECEIPT" Member="TBL_RECEIPTs">
+    <Type Name="TBL_RECEIPT">
+      <Column Name="ID_RECEIPT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME_CUSTOMER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_RECEIPT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_RECEIPT" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UNIT_PRICE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CASH" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CHANGE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIPT_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIPT_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIPT_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RECEIPT_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIPT_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_PRODUCT_TBL_RECEIPT" Member="TBL_PRODUCT" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="TBL_PRODUCT" IsForeignKey="true" />
+      <Association Name="TBL_USER_TBL_RECEIPT" Member="TBL_USER" ThisKey="RECEIPT_CREATEBY" OtherKey="ID_USER" Type="TBL_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_ROLE" Member="TBL_ROLEs">
+    <Type Name="TBL_ROLE">
+      <Column Name="ID_ROLE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME_ROLE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_ROLE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ROLE_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_ROLE_TBL_ROLE_PERMISSION" Member="TBL_ROLE_PERMISSIONs" ThisKey="ID_ROLE" OtherKey="ID_ROLE" Type="TBL_ROLE_PERMISSION" />
+      <Association Name="TBL_ROLE_TBL_USER" Member="TBL_USERs" ThisKey="ID_ROLE" OtherKey="ID_ROLE" Type="TBL_USER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_ROLE_PERMISSION" Member="TBL_ROLE_PERMISSIONs">
+    <Type Name="TBL_ROLE_PERMISSION">
+      <Column Name="ID_ROLE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_PER_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_PER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_PER_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_PER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_PER_UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_PERMISSION_TBL_ROLE_PERMISSION" Member="TBL_PERMISSION" ThisKey="ID_PER" OtherKey="ID_PER" Type="TBL_PERMISSION" IsForeignKey="true" />
+      <Association Name="TBL_ROLE_TBL_ROLE_PERMISSION" Member="TBL_ROLE" ThisKey="ID_ROLE" OtherKey="ID_ROLE" Type="TBL_ROLE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_SESSION" Member="TBL_SESSIONs">
+    <Type Name="TBL_SESSION">
+      <Column Name="ID_SESION" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_USER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_SESSION" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EDIT_SESSION" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="SESSION_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SESSION_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SESSION_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SESSION_CREATEDATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_USER_TBL_SESSION" Member="TBL_USER" ThisKey="ID_USER" OtherKey="ID_USER" Type="TBL_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_STOCK" Member="TBL_STOCKs">
+    <Type Name="TBL_STOCK">
+      <Column Name="ID_STOCK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_INITIAL_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_ADJUSTMENT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_DATE_PRODUCT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_PRODUCT_TBL_STOCK" Member="TBL_PRODUCT" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="TBL_PRODUCT" IsForeignKey="true" />
+      <Association Name="TBL_USER_TBL_STOCK" Member="TBL_USER" ThisKey="STOCK_CREATEBY" OtherKey="ID_USER" Type="TBL_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_USER" Member="TBL_USERs">
+    <Type Name="TBL_USER">
+      <Column Name="ID_USER" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="USER_NAME" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_EMAIL" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_DPT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_AREA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_POSITION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ROLE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USER_NICKNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_PASSWORD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="USER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="USER_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_USER_TBL_CUSTOMER" Member="TBL_CUSTOMERs" ThisKey="ID_USER" OtherKey="CUSTOMER_CREATEBY" Type="TBL_CUSTOMER" />
+      <Association Name="TBL_USER_TBL_CXC" Member="TBL_CXCs" ThisKey="ID_USER" OtherKey="CXC_CREATEBY" Type="TBL_CXC" />
+      <Association Name="TBL_USER_TBL_ORDER" Member="TBL_ORDERs" ThisKey="ID_USER" OtherKey="ORDER_CREATEBY" Type="TBL_ORDER" />
+      <Association Name="TBL_USER_TBL_PREPAID" Member="TBL_PREPAIDs" ThisKey="ID_USER" OtherKey="PREPAID_CREATEBY" Type="TBL_PREPAID" />
+      <Association Name="TBL_USER_TBL_PRODUCT" Member="TBL_PRODUCTs" ThisKey="ID_USER" OtherKey="PRODUCT_CREATEBY" Type="TBL_PRODUCT" />
+      <Association Name="TBL_USER_TBL_RECEIPT" Member="TBL_RECEIPTs" ThisKey="ID_USER" OtherKey="RECEIPT_CREATEBY" Type="TBL_RECEIPT" />
+      <Association Name="TBL_USER_TBL_SESSION" Member="TBL_SESSIONs" ThisKey="ID_USER" OtherKey="ID_USER" Type="TBL_SESSION" />
+      <Association Name="TBL_USER_TBL_STOCK" Member="TBL_STOCKs" ThisKey="ID_USER" OtherKey="STOCK_CREATEBY" Type="TBL_STOCK" />
+      <Association Name="TBL_AREA_TBL_USER" Member="TBL_AREA" ThisKey="ID_AREA" OtherKey="ID_AREA" Type="TBL_AREA" IsForeignKey="true" />
+      <Association Name="TBL_DPT_TBL_USER" Member="TBL_DPT" ThisKey="ID_DPT" OtherKey="ID_DPT" Type="TBL_DPT" IsForeignKey="true" />
+      <Association Name="TBL_POSITION_TBL_USER" Member="TBL_POSITION" ThisKey="ID_POSITION" OtherKey="ID_POSITION" Type="TBL_POSITION" IsForeignKey="true" />
+      <Association Name="TBL_ROLE_TBL_USER" Member="TBL_ROLE" ThisKey="ID_ROLE" OtherKey="ID_ROLE" Type="TBL_ROLE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_CRUD_AREA" Method="SP_CRUD_AREA">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_AREA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_DPT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pAREA_NAME" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="SP_CRUD_AREAResult">
+      <Column Name="ID_AREA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_DPT" Type="System.String" DbType="VarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_CUSTOMER" Method="SP_CRUD_CUSTOMER">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_CUSTOMER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCUSTOMER_NAME" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="SP_CRUD_CUSTOMERResult">
+      <Column Name="ID_CUSTOMER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_CXC" Method="SP_CRUD_CXC">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_CXC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_CUSTOMER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_PRODUCT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pQUANTITY_RETREAT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pQUANTITY_RETURN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pTOTAL_CXC" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="pBALANCE_CXC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pCUSTOMER_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pPRODUCT_NAME" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_CRUD_CXCResult">
+      <Column Name="ID_CXC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_PRICE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY_RETREAT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY_RETURN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_CXC" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="BALANCE_CXC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CXC_UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_DPT" Method="SP_CRUD_DPT">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_DPT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pNAME_DPT" Type="System.String" DbType="VarChar(75)" />
+    <ElementType Name="SP_CRUD_DPTResult">
+      <Column Name="ID_DPT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_DPT" Type="System.String" DbType="VarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE_DPT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEBY_DPT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATEBY_DPT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEDATE_DPT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATEDATE_DPT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_ORDER" Method="SP_CRUD_ORDER">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_ORDER" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_PREPAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pORDER_QUANTITY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pORDER_DATE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="pORDER_DELIVERY" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="SP_CRUD_ORDERResult">
+      <Column Name="ID_ORDER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PREPAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_DELIVERY" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_PER" Method="SP_CRUD_PER">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_PER" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_DPT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pNAME_PER" Type="System.String" DbType="VarChar(75)" />
+    <Parameter Name="pDESCRIP_PER" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="SP_CRUD_PERResult">
+      <Column Name="ID_PER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_DPT" Type="System.String" DbType="VarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_PERMISSION" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DESCRIP_PERMISSION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PER_STATE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PER_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_POSITION" Method="SP_CRUD_POSITION">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_PST" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_AREA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pNAME_PST" Type="System.String" DbType="VarChar(75)" />
+    <ElementType Name="SP_CRUD_POSITIONResult">
+      <Column Name="ID_POSITION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_POSITION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEBY_PST" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATEBY_PST" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_PREPAID" Method="SP_CRUD_PREPAID">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_PREPAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_CUSTOMER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_PRODUCT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pPREPAID_QUANTITY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pPREPAID_TOTAL" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="pPREPAID_CASH" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="pPREPAID_CHANGE" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="pPREPAID_BALANCE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pCUSTOMER_NAME" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_CRUD_PREPAIDResult">
+      <Column Name="ID_PREPAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_PRICE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_TOTAL" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_CASH" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_CHANGE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_BALANCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PREPAID_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_PRODUCT" Method="SP_CRUD_PRODUCT">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_PRODUCT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pTOTAL_PRODUCT" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="pDESCRIP_PRICE" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="SP_CRUD_PRODUCTResult">
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_PRODUCT" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_PRICE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_TAG_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_TAG_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_RECEIPT" Method="SP_CRUD_RECEIPT">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_RECEIPT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCUSTOMER_NAME" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="pQUANTITY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pTOTAL_RECEIPT" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="pID_PRODUCT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pUNIT_PRICE" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="pCASH" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="pCHANGE" Type="System.Decimal" DbType="Money" />
+    <ElementType Name="SP_CRUD_RECEIPTResult">
+      <Column Name="ID_RECEIPT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_CUSTOMER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_RECEIPT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_RECEIPT" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_PRICE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UNIT_PRICE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CASH" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CHANGE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIPT_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIPT_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIPT_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIPT_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RECEIPT_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_ROLE" Method="SP_CRUD_ROLE">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_ROLE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pNAME_ROLE" Type="System.String" DbType="VarChar(75)" />
+    <Parameter Name="pDESCRIP_ROLE" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="SP_CRUD_ROLEResult">
+      <Column Name="ID_ROLE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_ROLE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_ROLE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_ROLE_PER" Method="SP_CRUD_ROLE_PER">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_ROLE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_PER" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pNAME_ROLE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pNAME_PER" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_CRUD_ROLE_PERResult">
+      <Column Name="NAME_ROLE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_PERMISSION" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ROLE_PER_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_PER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_PER_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_PER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_PER_UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_STOCK" Method="SP_CRUD_STOCK">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_STOCK" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_PRODUCT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pSTOCK_INITIAL_QUANTITY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pSTOCK_QUANTITY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pSTOCK_ADJUSTMENT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pSTOCK_DATE_PRODUCT" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="SP_CRUD_STOCKResult">
+      <Column Name="ID_STOCK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIP_PRICE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_INITIAL_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_ADJUSTMENT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_DATE_PRODUCT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_UPDATEDBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="STOCK_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CRUD_USER" Method="SP_CRUD_USER">
+    <Parameter Name="p_ACTION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pID_USER" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pUSER_NAME" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="pUSER_EMAIL" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="pID_DPT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_AREA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_PST" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pID_ROLE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pUSER_NICKNAME" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="pUSER_PASSWORD" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="SP_CRUD_USERResult">
+      <Column Name="ID_USER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_NAME" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_EMAIL" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_DPT" Type="System.String" DbType="VarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_NAME" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_POSITION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_ROLE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_PASSWORD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_NICKNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="USER_CREATEBY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_UPDATEDBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USER_CREATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="USER_UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
