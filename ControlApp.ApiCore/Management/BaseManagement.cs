@@ -11,5 +11,7 @@ namespace ControlApp.ApiCore.Management
     public class BaseManagement
     {
         public CrudFactory _factory;
+
+
     }
 }
