@@ -13,10 +13,7 @@ namespace ControlApp.ApiCore.Management
        
         public AreaManagement()
         {
-
-
-
-
+            Console.WriteLine("hola mundo , haremos un merge y tiene que funcionar");
             _factory = new CrudArea();
             
         }
