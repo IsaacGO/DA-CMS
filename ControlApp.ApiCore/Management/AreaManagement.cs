@@ -13,6 +13,10 @@ namespace ControlApp.ApiCore.Management
        
         public AreaManagement()
         {
+
+
+
+
             _factory = new CrudArea();
             
         }
