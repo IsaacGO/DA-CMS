@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlApp.Util", "ControlA
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ControlApp.Srss", "ControlApp.Srss\ControlApp.Srss.rptproj", "{14210116-0AA1-4265-9A65-D5FAC7A3B8AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlApp.Presentation", "ControlApp.Presentation\ControlApp.Presentation.csproj", "{B4527BD9-DB20-410A-8346-D89B1518D0C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,12 @@ Global
 		{14210116-0AA1-4265-9A65-D5FAC7A3B8AB}.Release|Any CPU.ActiveCfg = Release
 		{14210116-0AA1-4265-9A65-D5FAC7A3B8AB}.Release|Any CPU.Build.0 = Release
 		{14210116-0AA1-4265-9A65-D5FAC7A3B8AB}.Release|Any CPU.Deploy.0 = Release
+		{B4527BD9-DB20-410A-8346-D89B1518D0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4527BD9-DB20-410A-8346-D89B1518D0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4527BD9-DB20-410A-8346-D89B1518D0C1}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4527BD9-DB20-410A-8346-D89B1518D0C1}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{B4527BD9-DB20-410A-8346-D89B1518D0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4527BD9-DB20-410A-8346-D89B1518D0C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
