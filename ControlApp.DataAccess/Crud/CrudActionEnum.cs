@@ -8,7 +8,7 @@ namespace ControlApp.DataAccess.Crud
 {
     public enum CrudActionEnum
     {
-        Create,
+        Create, // Prueba J
         SuperRetrieve,
         SuperRetrieveById,
         SuperRetrieveByName,
