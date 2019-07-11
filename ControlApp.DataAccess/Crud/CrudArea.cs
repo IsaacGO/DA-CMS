@@ -12,7 +12,7 @@ namespace ControlApp.DataAccess.Crud
 {
     public class CrudArea : CrudFactory 
     {
-        sqlConnectionDataContext Context = new sqlConnectionDataContext();
+        sqlConnectionDataContext Context = new sqlConnectionDataContext();// HI
         public CrudArea()
         {
             
