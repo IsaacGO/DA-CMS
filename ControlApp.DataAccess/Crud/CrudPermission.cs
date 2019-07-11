@@ -10,7 +10,7 @@ namespace ControlApp.DataAccess.Crud
 {
     public class CrudPermission : CrudFactory
     {
-        sqlConnectionDataContext Context = new sqlConnectionDataContext(); // HOLA MUNDO
+        sqlConnectionDataContext Context = new sqlConnectionDataContext(); 
         public override bool Activate(BaseEntity entity)
         {
             var ObjPer = (Permission)entity;
