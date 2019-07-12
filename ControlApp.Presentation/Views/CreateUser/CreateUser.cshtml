@@ -23,225 +23,160 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
 </head>
 
-<body class="nav-md">
-    <div class="container body">
-        <div class="main_container">
-            <div class="col-md-3 left_col">
-                <div class="left_col scroll-view">
-                    <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
-                    </div>
-      
-                    </div>
-                    <div class="clearfix"></div>
+<body class="CreateUser">
 
-                    <div class="row">
+    <!-- /top navigation -->
+    <!-- page content -->
+    <div class="right_col" role="main">
+        <div class="">
+            <div class="page-title">
+                <div class="title_left">
+                </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <ul class="nav navbar-right panel_toolbox">
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>User Create <small></small></h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li>
+                                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
                                         <li>
-                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li>
-                                                    <a href="#">Settings 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
+                                            <a href="#">Settings 1</a>
                                         </li>
                                         <li>
-                                            <a class="close-link"><i class="fa fa-close"></i></a>
+                                            <a href="#">Settings 2</a>
                                         </li>
                                     </ul>
-                                    <div class="clearfix"></div>
+                                </li>
+                                <li>
+                                    <a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            <form class="form-horizontal form-label-left" novalidate>
+
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
+                                        User ID <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="Id_User" name="Id_User" required="required" class="form-control col-md-7 col-xs-12" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
+                                    </div>
                                 </div>
-                                <div class="x_content">
 
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Dept">
+                                        Department ID <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="Id_Dept" name="Id_Dept" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
 
-                                    <!-- Smart Wizard -->
-                                    <div id="wizard" class="form_wizard wizard_horizontal">
-                                        <ul class="wizard_steps">
-                                            <li>
-                                                <a href="#Personal Information">
-                                                    <span class="step_no">1</span>
-                                                    <span class="step_descr">
-                                                        <large>Peronal Information</large>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#Department">
-                                                    <span class="step_no">2</span>
-                                                    <span class="step_descr">
-                                                        <large>Department</large>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#Area">
-                                                    <span class="step_no">3</span>
-                                                    <span class="step_descr">
-                                                        <large>Area</large>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                           
-                                        </ul>
-                                        <div id="Personal Information">
-                                            <form class="form-horizontal form-label-left">
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
-                                                        ID <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="Id_User" name="Id_User" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Area">
+                                        Area ID <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="Id_Area" name="Id_Area" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
 
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_User">
-                                                        Name <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Full Name Please" required="required" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">
-                                                        Email <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Position">
+                                        Position ID <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="Id_Position" name="Id_Position" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
 
-                                                <div class="item form-group">
-                                                    <label for="password" class="control-label col-md-3">Password <span class="required">*</span> </label>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Role">
+                                        Role ID <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="Id_Role" name="Id_Role" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
 
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input id="password" type="password" name="password" data-validate-length="6,8" required="required" class="form-control col-md-7 col-xs-12">
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_User">
+                                        Name <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Full Name Please" required="required" type="text">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">
+                                        Email <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
 
-                                                    </div>
-                                                </div>
+                                <div class="item form-group">
+                                    <label for="password" class="control-label col-md-3">Password <span class="required">*</span> </label>
 
-                                                <div class="item form-group">
-                                                    <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Confirm Password <span class="required">*</span></label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input id="password2" type="password" name="password2" data-validate-linked="password" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NickName_User">
-                                                        NickName <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input id="NickName_User" type="text" name="NickName_User" required="required" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-
-                                                <div class="x_content">
-                                                    <button type="button" class="btn btn-default">Finish</button>
-                                                    <button type="button" class="btn btn-default">Next</button>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                        <div id="step-2">
-                                            <h2 class="StepTitle">Department</h2>
-                                            <form class="form-horizontal form-label-left">
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Department">
-                                                        ID <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="Id_Department" name="Id_Department" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_Deparment">
-                                                        Name Department <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input id="Name_Department" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="Name_Department" required="required" type="text">
-                                                    </div>
-                                                </div>
-
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Estado">
-                                                        Estado <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="checkbox" id="Estado" name="Estado" required="required" class="form-control col-md-7 col-xs-12">
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="x_content">
-                                                    <button type="button" class="btn btn-default">Finish</button>
-                                                    <button type="button" class="btn btn-default">Previous</button>
-                                                    <button type="button" class="btn btn-default">Next</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div id="step-3">
-                                            <h2 class="StepTitle">Area</h2>
-                                            <form class="form-horizontal form-label-left">
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Department">
-                                                        ID <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="text" id="Id_Department" name="Id_Department" required="required" class="form-control col-md-7 col-xs-12">
-                                                    </div>
-                                                </div>
-
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_Area">
-                                                        Name Area <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input id="Name_Area" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="Name_Area" required="required" type="text">
-                                                    </div>
-                                                </div>
-
-                                                <div class="item form-group">
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Estado">
-                                                        Estado <span class="required">*</span>
-                                                    </label>
-                                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                                        <input type="checkbox" id="Estado" name="Estado" required="required" class="form-control col-md-7 col-xs-12">
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="x_content">
-                                                    <button type="button" class="btn btn-default">Finish</button>
-                                                    <button type="button" class="btn btn-default">Previous</button>
-                                                    <button type="button" class="btn btn-default">Next</button>
-                                                </div>
-                                            </form>
-
-                                        </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="password" type="password" name="password" data-validate-length="6,8" required="required" class="form-control col-md-7 col-xs-12">
 
                                     </div>
                                 </div>
-                            </div>
+
+                                <div class="item form-group">
+                                    <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Confirm Password <span class="required">*</span></label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="password2" type="password" name="password2" data-validate-linked="password" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NickName_User">
+                                        NickName <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="NickName_User" type="text" name="NickName_User" required="required" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <button type="submit" class="btn btn-primary">Cancel</button>
+                                        <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- /page content -->
+    <!-- footer content -->
+    <footer>
+        <div class="pull-right">
+            CMS
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+    <!-- /footer content -->
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -250,11 +185,11 @@
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
-    <!-- jQuery Smart Wizard -->
-    <script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+    <!-- validator -->
+    <script src="../vendors/validator/validator.js"></script>
+
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
-
 
 </body>
 </html>

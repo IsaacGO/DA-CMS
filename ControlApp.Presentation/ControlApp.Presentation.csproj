@@ -108,7 +108,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CreateAreaController.cs" />
+    <Compile Include="Controllers\CreateDepartmentController.cs" />
     <Compile Include="Controllers\CreateNoteController.cs" />
+    <Compile Include="Controllers\CreatePermissionController.cs" />
+    <Compile Include="Controllers\CreatePositionController.cs" />
+    <Compile Include="Controllers\CreateRoleController.cs" />
+    <Compile Include="Controllers\CreateRolePermissionController.cs" />
     <Compile Include="Controllers\CreateUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -126,6 +132,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\CreateDepartment\CreateDepartment.cshtml" />
+    <Content Include="Views\CreateArea\CreateArea.cshtml" />
+    <Content Include="Views\CreatePosition\CreatePosition.cshtml" />
+    <Content Include="Views\CreatePermission\CreatePermission.cshtml" />
+    <Content Include="Views\CreateRole\CreateRole.cshtml" />
+    <Content Include="Views\CreateRolePermission\CreateRolePermission.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
