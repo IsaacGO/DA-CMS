@@ -13,172 +13,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Estilos/font-awenson.min.css" rel="stylesheet" />
     <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-
+    <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="~/Estilos/custom.min.css" rel="stylesheet" />
+
 </head>
 
-<body class="CreateUser">
+                        <body class="CreateUser">
 
-    <!-- /top navigation -->
-    <!-- page content -->
-    <div class="right_col" role="main">
-        <div class="">
-            <div class="page-title">
-                <div class="title_left">
-                </div>
+                            <!-- /top navigation -->
+        <!-- page content -->
+        <div class="right_col" role="main">
+                                <div class="">
+                                    <div class="page-title">
+                                        <div class="title_left">
+                                        </div>
 
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="x_panel">
+                                                <div class="x_title">
+                                                    <h2>Create User <small></small></h2>
+                                                    <ul class="nav navbar-right panel_toolbox">
+                                                        <li>
+                                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                                        </li>
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                            <ul class="dropdown-menu" role="menu">
+                                                                <li>
+                                                                    <a href="#">Settings 1</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">Settings 2</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <a class="close-link"><i class="fa fa-close"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="x_content">
+
+                                                    <form class="form-horizontal form-label-left" novalidate>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
+                                                                User ID <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input type="text" id="Id_User" name="Id_User" required="required" class="form-control col-md-7 col-xs-12" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="9" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Dept">
+                                                                Department ID <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <select name="Id_Department" id="Id_Department" required="required">
+                                                                    <option>1-</option>
+                                                                    <option>2-</option>
+                                                                    <option>3-</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Area">
+                                                                Area ID <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <select name="Id_Area" id="Id_Area" required="required">
+                                                                    <option>1-</option>
+                                                                    <option>2-</option>
+                                                                    <option>3-</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Position">
+                                                                Position ID <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <select name="Id_Position" id="Id_Position" required="required">
+                                                                    <option>1-</option>
+                                                                    <option>2-</option>
+                                                                    <option>3-</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Role">
+                                                                Role ID <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <select name="Id_Role" id="Id_Role" required="required">
+                                                                    <option>1-</option>
+                                                                    <option>2-</option>
+                                                                    <option>3-</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_User">
+                                                                Name <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Full Name Please" required="required" type="text">
+                                                            </div>
+                                                        </div>
+                                                            <div class="item form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">
+                                                                    Email <span class="required">*</span>
+                                                                </label>
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <input type="email" id="email" name="email" size="40" required="required" class="form-control col-md-7 col-xs-12" placeholder="example@gmail.com">
+                                        </div>
+                                                                </div>
+
+                                                                <div class="item form-group">
+                                                                    <label for="password" class="control-label col-md-3">Password <span class="required">*</span> </label>
+
+                                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                        <input id="password" type="password" name="password" data-validate-length="6,8" required="required" class="form-control col-md-7 col-xs-12">
+
+                                        </div>
+                                                                    </div>
+
+                                                                    <div class="item form-group">
+                                                                        <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Confirm Password <span class="required">*</span></label>
+                                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                            <input id="password2" type="password" name="password2" data-validate-linked="password" required="required" class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                                                        </div>
+
+
+                                                                        <div class="item form-group">
+                                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NickName_User">
+                                                                                NickName
+                                        </label>
+                                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                <input id="NickName_User" type="text" name="NickName_User" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                                        </div>
+                                                                            </div>
+
+                                                                            <div class="ln_solid"></div>
+                                                                            <div class="form-group">
+                                                                                <div class="col-md-6 col-md-offset-3">
+                                                                                    <button type="submit" class="btn btn-primary">Cancel</button>
+                                                                                    <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                                                                </div>
+                                                                            </div>
+                                </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
             </div>
-            <div class="clearfix"></div>
-
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>User Create <small></small></h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li>
-                                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="#">Settings 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Settings 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-
-                            <form class="form-horizontal form-label-left" novalidate>
-
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
-                                        User ID <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="Id_User" name="Id_User" required="required" class="form-control col-md-7 col-xs-12" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
-                                    </div>
-                                </div>
-
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Dept">
-                                        Department ID <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="Id_Dept" name="Id_Dept" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
-
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Area">
-                                        Area ID <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="Id_Area" name="Id_Area" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
-
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Position">
-                                        Position ID <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="Id_Position" name="Id_Position" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
-
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Role">
-                                        Role ID <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="Id_Role" name="Id_Role" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
-
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_User">
-                                        Name <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Full Name Please" required="required" type="text">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">
-                                        Email <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
-
-                                <div class="item form-group">
-                                    <label for="password" class="control-label col-md-3">Password <span class="required">*</span> </label>
-
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="password" type="password" name="password" data-validate-length="6,8" required="required" class="form-control col-md-7 col-xs-12">
-
-                                    </div>
-                                </div>
-
-                                <div class="item form-group">
-                                    <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Confirm Password <span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="password2" type="password" name="password2" data-validate-linked="password" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
-
-
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NickName_User">
-                                        NickName <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="NickName_User" type="text" name="NickName_User" required="required" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
-
-                                <div class="ln_solid"></div>
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-3">
-                                        <button type="submit" class="btn btn-primary">Cancel</button>
-                                        <button id="send" type="submit" class="btn btn-success">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                                                </div>
+                                                <!-- /page content -->
+        <!-- footer content -->
+        <footer>
+                                                    <div class="pull-right">
+                                                        CMS
             </div>
-        </div>
-    </div>
-    <!-- /page content -->
-    <!-- footer content -->
-    <footer>
-        <div class="pull-right">
-            CMS
-        </div>
-        <div class="clearfix"></div>
-    </footer>
-    <!-- /footer content -->
-    <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+                                                    <div class="clearfix"></div>
+                                                </footer>
+                                                <!-- /footer content -->
+        <!-- jQuery -->
+        <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
@@ -191,5 +207,5 @@
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
 
-</body>
+    </body>
 </html>

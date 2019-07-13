@@ -13,14 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Estilos/font-awenson.min.css" rel="stylesheet" />
     <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-
+    <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="~/Estilos/custom.min.css" rel="stylesheet" />
 </head>
 
 <body class="CreateDepartment">
@@ -40,7 +39,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Department Create <small></small></h2>
+                            <h2>Create Department <small></small></h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li>
                                     <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -88,23 +87,8 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Dept">
                                         Department State <span class="required">*</span>
                                     </label>
-                                </div>
-
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Dept">
-                                        Active <span class="required"></span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="checkbox" id="State_Dept" name="State_Dept" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Depat">
-                                        Inactive <span class="required"></span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="checkbox" id="State_Dept" name="State_Dept" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
+                                    <input type="radio" name="Active" value="A">  Active
+                                    <input type="radio" name="Inactive" value="I">  Inactive
                                 </div>
 
                                 <div class="ln_solid"></div>

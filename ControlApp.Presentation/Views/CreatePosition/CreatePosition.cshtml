@@ -13,14 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Estilos/font-awenson.min.css" rel="stylesheet" />
     <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-
+    <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="~/Estilos/custom.min.css" rel="stylesheet" />
 </head>
 
 <body class="CreatePosition">
@@ -80,7 +79,11 @@
                                         Area ID <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="Id_Area" name="Id_Area" required="required" class="form-control col-md-7 col-xs-12">
+                                        <select name="Id_Area" id="Id_Area" required="required">
+                                            <option>1-</option>
+                                            <option>2-</option>
+                                            <option>3-</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -97,23 +100,8 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Position">
                                         Position State <span class="required">*</span>
                                     </label>
-                                </div>
-
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Position">
-                                        Active <span class="required"></span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="checkbox" id="State_Position" name="State_Position" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Position">
-                                        Inactive <span class="required"></span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="checkbox" id="State_Position" name="State_Position" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
+                                    <input type="radio" name="Active" value="A">  Active
+                                    <input type="radio" name="Inactive" value="I">  Inactive
                                 </div>
 
                                 <div class="ln_solid"></div>
