@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "UploadNoteStyleCorrection";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Estilos/font-awenson.min.css" rel="stylesheet" />
+    <!-- NProgress -->
+    <link href="~/Estilos/nprogress.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="~/Estilos/custom.min.css" rel="stylesheet" />
+</head>
+
+<body class=" UploadNoteStyleCorrection">
+    <!-- /top navigation -->
+    <!-- page content -->
+    <div class="right_col" role="main">
+        <div class="">
+            <div class="page-title">
+                <div class="title_left">
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+                <div class="profile_pic">
+                    <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                </div>
+                <div class="profile_info">
+                    <span>Welcome,</span>
+                    <h2>John Doe</h2>
+                </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Note Style Correction<small></small></h2>
+                            <ul class="nav navbar-right panel_toolbox"></ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            <form class="form-horizontal form-label-left" novalidate>
+
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Role">
+                                        Upload Note Style Correction <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="file" name="archivo">
+                                    </div>
+                                </div>
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <button type="submit" class="btn btn-primary">Cancel</button>
+                                        <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Scripts/Fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="~/Scripts/Nprogress.js"></script>
+    <!-- validator -->
+    <script src="~/Scripts/validator.js"></script>
+    <!-- jQuery Smart Wizard -->
+    <script src="~/Scripts/jquery.smartWizard.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/Scripts/Custom.min.js"></script>
+
+</body>
+</html>

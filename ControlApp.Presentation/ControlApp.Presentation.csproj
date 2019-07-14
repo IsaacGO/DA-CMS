@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F05DCA16-945E-4D0D-AE6D-E2DCFC6CB45C}</ProjectGuid>
+    <ProjectGuid>{784607CF-7062-40A7-9AC8-C020429010AA}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -93,19 +93,44 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Estilos\Dropzone.min.css" />
+    <Content Include="Estilos\font-awenson.min.css" />
+    <Content Include="Estilos\animate.min.css" />
+    <Content Include="Estilos\nprogress.css" />
+    <Content Include="Estilos\custom.min.css" />
+    <Content Include="Estilos\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Custom.min.js" />
+    <Content Include="Scripts\Fastclick.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Dropzone.min.js" />
+    <Content Include="Scripts\jquery.smartWizard.js" />
+    <Content Include="Scripts\Nprogress.js" />
+    <Content Include="Scripts\Jquery.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\validator.js" />
     <Content Include="Web.config" />
+    <Content Include="Views\CreateUser\CreateUser.cshtml" />
+    <Content Include="Views\CreateNote\CreateNote.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CreateAreaController.cs" />
+    <Compile Include="Controllers\CreateDepartmentController.cs" />
+    <Compile Include="Controllers\CreateNoteController.cs" />
+    <Compile Include="Controllers\CreatePermissionController.cs" />
+    <Compile Include="Controllers\CreatePositionController.cs" />
+    <Compile Include="Controllers\CreateRoleController.cs" />
+    <Compile Include="Controllers\CreateRolePermissionController.cs" />
+    <Compile Include="Controllers\CreateUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UploadNoteDiagramController.cs" />
+    <Compile Include="Controllers\UploadNoteStyleCorrectionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -121,6 +146,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\CreateDepartment\CreateDepartment.cshtml" />
+    <Content Include="Views\CreateArea\CreateArea.cshtml" />
+    <Content Include="Views\CreatePosition\CreatePosition.cshtml" />
+    <Content Include="Views\CreatePermission\CreatePermission.cshtml" />
+    <Content Include="Views\CreateRole\CreateRole.cshtml" />
+    <Content Include="Views\CreateRolePermission\CreateRolePermission.cshtml" />
+    <Content Include="Views\UploadNoteDiagram\UploadNoteDiagram.cshtml" />
+    <Content Include="Views\UploadNoteStyleCorrection\UploadNoteStyleCorrection.cshtml" />
+    <Content Include="Views\alguno\alguno.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Estilos\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
@@ -146,9 +179,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55168</DevelopmentServerPort>
+          <DevelopmentServerPort>60982</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55168/</IISUrl>
+          <IISUrl>http://localhost:60982/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -160,7 +193,7 @@
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
