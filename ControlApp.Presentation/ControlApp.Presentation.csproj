@@ -93,19 +93,27 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Estilos\Login.css" />
+    <Content Include="Estilos\Dropzone.min.css" />
     <Content Include="Estilos\font-awenson.min.css" />
     <Content Include="Estilos\animate.min.css" />
     <Content Include="Estilos\nprogress.css" />
     <Content Include="Estilos\custom.min.css" />
+    <Content Include="Estilos\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Custom.min.js" />
+    <Content Include="Scripts\Fastclick.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Dropzone.min.js" />
+    <Content Include="Scripts\jquery.smartWizard.js" />
+    <Content Include="Scripts\Nprogress.js" />
+    <Content Include="Scripts\Jquery.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\validator.js" />
     <Content Include="Web.config" />
     <Content Include="Views\CreateUser\CreateUser.cshtml" />
     <Content Include="Views\CreateNote\CreateNote.cshtml" />
@@ -121,6 +129,8 @@
     <Compile Include="Controllers\CreateRolePermissionController.cs" />
     <Compile Include="Controllers\CreateUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UploadNoteDiagramController.cs" />
+    <Compile Include="Controllers\UploadNoteStyleCorrectionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,6 +152,9 @@
     <Content Include="Views\CreatePermission\CreatePermission.cshtml" />
     <Content Include="Views\CreateRole\CreateRole.cshtml" />
     <Content Include="Views\CreateRolePermission\CreateRolePermission.cshtml" />
+    <Content Include="Views\UploadNoteDiagram\UploadNoteDiagram.cshtml" />
+    <Content Include="Views\UploadNoteStyleCorrection\UploadNoteStyleCorrection.cshtml" />
+    <Content Include="Views\alguno\alguno.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
