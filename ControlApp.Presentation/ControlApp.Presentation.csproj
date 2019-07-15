@@ -144,7 +144,6 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\CreateDepartment\CreateDepartment.cshtml" />
     <Content Include="Views\CreateArea\CreateArea.cshtml" />
@@ -155,6 +154,7 @@
     <Content Include="Views\UploadNoteDiagram\UploadNoteDiagram.cshtml" />
     <Content Include="Views\UploadNoteStyleCorrection\UploadNoteStyleCorrection.cshtml" />
     <Content Include="Views\alguno\alguno.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -165,6 +165,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlApp.ApiCore\ControlApp.ApiCore.csproj">
+      <Project>{826d98df-2482-4611-b265-bed324f65cdc}</Project>
+      <Name>ControlApp.ApiCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlApp.Entities\ControlApp.Entities.csproj">
+      <Project>{af1dfb1b-6012-42f9-8608-49faf8371551}</Project>
+      <Name>ControlApp.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
