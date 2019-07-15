@@ -161,5 +161,9 @@ namespace ControlApp.DataAccess.Crud
             Context.SP_CRUD_POSITION((int)CrudActionEnum.Update, ObjPst.ID_Position, ObjPst.ID_Area, ObjPst.IdSession, ObjPst.Name_Position);
             return true;
         }
+        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -227,5 +227,9 @@ namespace ControlApp.DataAccess.Crud
                 Obj.Cash, Obj.Change);
             return true;
         }
+        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
