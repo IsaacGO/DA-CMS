@@ -20,6 +20,9 @@
     <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Estilos/custom.min.css" rel="stylesheet" />
+    <!--Checkbox-->
+    <link href="~/Estilos/Checkbox.css" rel="stylesheet" />
+
 </head>
 
 <body class="nav-md">
@@ -27,16 +30,13 @@
         <div class="main_container">
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
-                    <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
-                    </div>
 
                     <div class="clearfix"></div>
 
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_info">
-                            <span>Welcome,</span>
+                            <span>Welcome</span>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -48,67 +48,26 @@
                         <div class="menu_section">
                             <h3>General</h3>
                             <ul class="nav side-menu">
+                                <li><a href="../CreateUser/CreateUser"> <img src="https://img.icons8.com/cotton/35/000000/name--v2.png"> User </a></li>
+                                <li><a href="../CreateDepartment/CreateDepartment"> <img src="https://img.icons8.com/color/30/000000/company.png"> Department </a></li>
+                                <li><a href="../CreateArea/CreateArea"> <img src="https://img.icons8.com/nolan/30/000000/job.png"> Area </a> </li>
+                                <li><a href="../CreatePosition/CreatePosition"> <img src="https://img.icons8.com/nolan/30/000000/leaderboard.png"> Position </a></li>
+                                <li><a href="../CreatePermission/CreatePermission"> <img src="https://img.icons8.com/nolan/30/000000/warning-shield.png"> Permission </a></li>
+                                <li><a href="../CreateRole/CreateRole"> <img src="https://img.icons8.com/nolan/30/000000/conference-call.png"> Role </a> </li>
+                                <li><a href="../CreateRolePermission/CreateRolePermission"> <img src="https://img.icons8.com/cotton/30/000000/business-network.png"> Role Permission </a></li>
+                                <li><a href="../CreateNote/CreateNote"> <img src="https://img.icons8.com/nolan/30/000000/paper.png"> Nota </a></li>
                                 <li>
-                                    <a><i class="fa fa-clone"></i> Usuario <span class="fa fa-chevron-down"></span></a>
+                                    <a> <img src="https://img.icons8.com/color/30/000000/graph-report.png"> Reports and Others <img src="https://img.icons8.com/ultraviolet/20/000000/circled-chevron-down.png"></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="CreateUser.cshtml">Crear</a> </li>
-                                        <li><a href="index.html">Modificar</a></li>
-                                        <li><a href="index2.html">Eliminar</a></li>
-                                        <li><a href="index3.html">Modificar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i> Department <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="form.html">Crear</a></li>
-                                        <li><a href="form_advanced.html">Modificar</a></li>
-                                        <li><a href="form_validation.html">Eliminar</a></li>
-                                        <li><a href="form_wizards.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i> Area <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="general_elements.html">Crear</a></li>
-                                        <li><a href="media_gallery.html">Modificar</a></li>
-                                        <li><a href="typography.html">Eliminar</a></li>
-                                        <li><a href="icons.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i> Position <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="tables.html">Crear</a></li>
-                                        <li><a href="tables_dynamic.html">Modificar</a></li>
-                                        <li><a href="tables_dynamic.html">Eliminar</a></li>
-                                        <li><a href="tables_dynamic.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i> Permission <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="chartjs.html">Crear</a></li>
-                                        <li><a href="chartjs2.html">Modificar</a></li>
-                                        <li><a href="morisjs.html">Eliminar</a></li>
-                                        <li><a href="echarts.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i>Role <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Crear</a></li>
-                                        <li><a href="fixed_footer.html">Modificar</a></li>
-                                        <li><a href="fixed_sidebar.html">Eliminar</a></li>
-                                        <li><a href="fixed_footer.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i>Role Permission <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Crear</a></li>
-                                        <li><a href="fixed_footer.html">Modificar</a></li>
-                                        <li><a href="fixed_sidebar.html">Eliminar</a></li>
-                                        <li><a href="fixed_footer.html">Consultar</a></li>
+                                        <li>
+                                            <a> Reports <img src="https://img.icons8.com/ultraviolet/20/000000/circled-chevron-down.png"></a>
+                                            <ul class="nav child_menu">
+                                                <li><a href="../WeeklyReport/WeeklyReport">Weekly Reports</a> </li>
+                                                <li><a href="../MonthlyReport/MonthlyReport">Monthly Reports</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href=""> Graphs </a></li>
+                                        <li><a href=""> Indicators </a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -231,7 +190,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Personal Information</h3>
+                            <h3>Note Information</h3>
                         </div>
 
                     </div>
@@ -292,8 +251,10 @@
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Note">
                                             State Note <span class="required">*</span>
                                         </label>
-                                        <input type="radio" name="Active" value="A">  Active
-                                        <input type="radio" name="Inactive" value="I">  Inactive
+                                        <label class="switch">
+                                            <input type="checkbox" data-on="Enabled" data-off="Disabled">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
 
                                     <div class="ln_solid"></div>
@@ -301,6 +262,8 @@
                                         <div class="col-md-6 col-md-offset-3">
                                             <button type="submit" class="btn btn-primary">Cancel</button>
                                             <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                            <button id="Modify" type="button" class="btn btn-success">Modify</button>
+                                            <button id="Consult" type="button" class="btn btn-success">Consult</button>
                                         </div>
                                     </div>
                                 </form>
