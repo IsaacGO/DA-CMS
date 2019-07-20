@@ -146,6 +146,8 @@
     <Compile Include="Controllers\CreateRoleController.cs" />
     <Compile Include="Controllers\CreateRolePermissionController.cs" />
     <Compile Include="Controllers\CreateUserController.cs" />
+    <Compile Include="Controllers\GraphsController.cs" />
+    <Compile Include="Controllers\IndicatorsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MonthlyReportController.cs" />
     <Compile Include="Controllers\UnEjemploController.cs" />
@@ -177,6 +179,8 @@
     <Content Include="Views\UploadNoteStyleCorrection\UploadNoteStyleCorrection.cshtml" />
     <Content Include="Views\MonthlyReport\MonthlyReport.cshtml" />
     <Content Include="Views\WeeklyReport\WeeklyReport.cshtml" />
+    <Content Include="Views\Graphs\Graphs.cshtml" />
+    <Content Include="Views\Indicators\Indicators.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
