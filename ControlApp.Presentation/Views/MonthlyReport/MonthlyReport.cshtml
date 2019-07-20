@@ -1,7 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "CreateNote";
+    ViewBag.Title = "MonthlyReport";
 }
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
@@ -20,19 +20,14 @@
     <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Estilos/custom.min.css" rel="stylesheet" />
-    <!--Checkbox-->
-    <link href="~/Estilos/Checkbox.css" rel="stylesheet" />
 
 </head>
-
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
-
                     <div class="clearfix"></div>
-
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_info">
@@ -40,9 +35,7 @@
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
-
                     <br />
-
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
@@ -95,6 +88,7 @@
                         <div class="nav toggle">
                             <a id="menu_toggle"> <img src="~/Iconos/Menu.png" /> </a>
                         </div>
+
                         <br />
 
                         <script type="text/javascript">
@@ -120,8 +114,9 @@
                             var yy = date.getYear();
                             var year = (yy < 1000) ? yy + 1900 : yy;
                             document.write("________________________________________" + dia[d.getDay()] + " " + day + " de " + months[month] + " del " + year + "________________________________________");
-                            //]]>
+                                                    //]]>
                         </script>
+
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -175,6 +170,17 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a>
+                                            <span>
+                                                <span>Usuario</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
                                         <div class="text-center">
                                             <a>
                                                 <strong>See All Alerts</strong>
@@ -194,85 +200,101 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Note Information</h3>
+                            <h3>Monthly Report</h3>
                         </div>
-
                     </div>
                     <div class="clearfix"></div>
-
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <ul class="nav navbar-right panel_toolbox"></ul>
-
+                                <br />
+                                <br />
                                 <form class="form-horizontal form-label-left" novalidate>
-
                                     <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
-                                            ID Note <span class="required">*</span>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Month">
+                                            Month <span class="required"></span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="Id_Note" name="Id_Note" required="required" class="form-control col-md-7 col-xs-12" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
+                                            <input type="month" id="Month" name="Month" required="required" class="form-control col-md-7 col-xs-12" />
                                         </div>
                                     </div>
-
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
-                                            ID User <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="Id_User" name="Id_User" required="required" class="form-control col-md-7 col-xs-12" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
-                                        </div>
-                                    </div>
-
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_User">
-                                            Title <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="Title" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="Title" required="required" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Date">
-                                            Date <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="date" id="Date" name="Date" size="20" required="required" class="form-control col-md-7 col-xs-12">
-                                        </div>
-                                    </div>
-
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Note_Content">
-                                            Content Note <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <textarea id="Note_Content" required="required" name="Note_Content" class="form-control col-md-7 col-xs-12" rows="7" cols="200" placeholder="Attach the note"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Area">
-                                            State Area <span class="required">*</span>
-                                        </label>
-                                        <div class="onoffswitch">
-                                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                                            <label class="onoffswitch-label" for="myonoffswitch">
-                                                <span class="onoffswitch-inner"></span>
-                                                <span class="onoffswitch-switch"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ln_solid"></div>
+                                    <br />
                                     <div class="form-group">
                                         <div class="col-md-6 col-md-offset-3">
-                                            <button type="submit" class="btn btn-primary">Cancel</button>
-                                            <button id="send" type="submit" class="btn btn-success">Submit</button>
-                                            <button id="Modify" type="button" class="btn btn-success">Modify</button>
-                                            <button id="Consult" type="button" class="btn btn-success">Consult</button>
+                                            <button id="Generate" type="button" class="btn btn-success">Generate</button>
                                         </div>
                                     </div>
+                                </form>
+                                <br />
+                                <br />
+                                <form class="form-horizontal form-label-left" novalidate>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2>Report</h2>
+                                                <ul class="nav navbar-right panel_toolbox"></ul>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="x_content">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>ID Note</th>
+                                                            <th>Title Note</th>
+                                                            <th>Journalist Name </th>
+                                                            <th>Area</th>
+                                                            <th>Date</th>
+                                                            <th>State</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Accidente Heredia</td>
+                                                            <td>Jahaira Morales Vargas</td>
+                                                            <td>Sucesos</td>
+                                                            <td>16/4/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Partido Saprissa vs Heredia</td>
+                                                            <td>Paola Corrales Gómez</td>
+                                                            <td>Deportes</td>
+                                                            <td>22/3/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Reino Unido denuncia a Irán </td>
+                                                            <td>Kenneth Calderon </td>
+                                                            <td>Internacionales</td>
+                                                            <td>01/5/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4</td>
+                                                            <td>Policías chocan y alcoholemia da positiva </td>
+                                                            <td>Jahaira Morales Vargas </td>
+                                                            <td>Sucesos</td>
+                                                            <td>9/7/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5</td>
+                                                            <td>El país que quiero </td>
+                                                            <td>Kenneth Calderon </td>
+                                                            <td>Opinion</td>
+                                                            <td>18/1/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ln_solid"></div>
                                 </form>
                             </div>
                         </div>
@@ -281,7 +303,6 @@
             </div>
         </div>
     </div>
-
         <!-- jQuery -->
         <script src="~/Scripts/jquery.min.js"></script>
         <!-- Bootstrap -->
@@ -296,7 +317,6 @@
         <script src="~/Scripts/jquery.smartWizard.js"></script>
         <!-- Custom Theme Scripts -->
         <script src="~/Scripts/Custom.min.js"></script>
-
 </body>
 </html>
 

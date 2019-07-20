@@ -20,6 +20,8 @@
     <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Estilos/custom.min.css" rel="stylesheet" />
+    <!--Checkbox-->
+    <link href="~/Estilos/Checkbox.css" rel="stylesheet" />
 </head>
 
 <body class="nav-md">
@@ -27,16 +29,13 @@
         <div class="main_container">
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
-                    <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
-                    </div>
 
                     <div class="clearfix"></div>
 
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_info">
-                            <span>Welcome,</span>
+                            <span>Welcome</span>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -48,67 +47,26 @@
                         <div class="menu_section">
                             <h3>General</h3>
                             <ul class="nav side-menu">
+                                <li><a href="../CreateUser/CreateUser"><img src="~/Iconos/User.png" /> User</a></li>
+                                <li><a href="../CreateDepartment/CreateDepartment"> <img src="~/Iconos/Department.png" /> Department</a></li>
+                                <li><a href="../CreateArea/CreateArea"> <img src="~/Iconos/Area.png" />  Area </a> </li>
+                                <li><a href="../CreatePosition/CreatePosition"> <img src="~/Iconos/Position.png" />  Position</a></li>
+                                <li><a href="../CreatePermission/CreatePermission"> <img src="~/Iconos/Permission.png" /> Permission </a></li>
+                                <li><a href="../CreateRole/CreateRole"> <img src="~/Iconos/Role.png" /> Role </a> </li>
+                                <li><a href="../CreateRolePermission/CreateRolePermission"> <img src="~/Iconos/Role Permission.png" />  Role Permission </a></li>
+                                <li><a href="../CreateNote/CreateNote"> <img src="~/Iconos/Nota.png" />  Nota </a></li>
                                 <li>
-                                    <a><i class="fa fa-clone"></i> Usuario <span class="fa fa-chevron-down"></span></a>
+                                    <a> <img src="~/Iconos/Reports and Others.png"> Reports and Others <img src="~/Iconos/Abajo.png"></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="CreateUser.cshtml">Crear</a> </li>
-                                        <li><a href="index.html">Modificar</a></li>
-                                        <li><a href="index2.html">Eliminar</a></li>
-                                        <li><a href="index3.html">Modificar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i> Department <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="form.html">Crear</a></li>
-                                        <li><a href="form_advanced.html">Modificar</a></li>
-                                        <li><a href="form_validation.html">Eliminar</a></li>
-                                        <li><a href="form_wizards.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i> Area <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="general_elements.html">Crear</a></li>
-                                        <li><a href="media_gallery.html">Modificar</a></li>
-                                        <li><a href="typography.html">Eliminar</a></li>
-                                        <li><a href="icons.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i> Position <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="tables.html">Crear</a></li>
-                                        <li><a href="tables_dynamic.html">Modificar</a></li>
-                                        <li><a href="tables_dynamic.html">Eliminar</a></li>
-                                        <li><a href="tables_dynamic.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i> Permission <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="chartjs.html">Crear</a></li>
-                                        <li><a href="chartjs2.html">Modificar</a></li>
-                                        <li><a href="morisjs.html">Eliminar</a></li>
-                                        <li><a href="echarts.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i>Role <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Crear</a></li>
-                                        <li><a href="fixed_footer.html">Modificar</a></li>
-                                        <li><a href="fixed_sidebar.html">Eliminar</a></li>
-                                        <li><a href="fixed_footer.html">Consultar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i>Role Permission <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Crear</a></li>
-                                        <li><a href="fixed_footer.html">Modificar</a></li>
-                                        <li><a href="fixed_sidebar.html">Eliminar</a></li>
-                                        <li><a href="fixed_footer.html">Consultar</a></li>
+                                        <li>
+                                            <a> Reports <img src="~/Iconos/Abajo.png"> </a>
+                                            <ul class="nav child_menu">
+                                                <li><a href="../WeeklyReport/WeeklyReport">Weekly Reports</a> </li>
+                                                <li><a href="../MonthlyReport/MonthlyReport">Monthly Reports</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href=""> Graphs </a></li>
+                                        <li><a href=""> Indicators </a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -120,12 +78,6 @@
                     <div class="sidebar-footer hidden-small">
                         <a data-toggle="tooltip" data-placement="top" title="Settings">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Lock">
-                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                         </a>
                         <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
@@ -140,13 +92,39 @@
                 <div class="nav_menu">
                     <nav>
                         <div class="nav toggle">
-                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                            <a id="menu_toggle"> <img src="~/Iconos/Menu.png" /> </a>
                         </div>
+                        <br />
 
+                        <script type="text/javascript">
+                            //<![CDATA[
+                            function makeArray() {
+                                for (i = 0; i < makeArray.arguments.length; i++)
+                                    this[i + 1] = makeArray.arguments[i];
+                            }
+                            var months = new makeArray('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo',
+                                'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+                            var d = new Date();
+                            var dia = new Array(7);
+                            dia[0] = "Domingo";
+                            dia[1] = "Lunes";
+                            dia[2] = "Martes";
+                            dia[3] = "Miercoles";
+                            dia[4] = "Jueves";
+                            dia[5] = "Viernes";
+                            dia[6] = "Sabado";
+                            var date = new Date();
+                            var day = date.getDate();
+                            var month = date.getMonth() + 1;
+                            var yy = date.getYear();
+                            var year = (yy < 1000) ? yy + 1900 : yy;
+                            document.write("________________________________________" + dia[d.getDay()] + " " + day + " de " + months[month] + " del " + year + "________________________________________");
+                                                    //]]>
+                        </script>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    Usuario <span class=" fa fa-angle-down"></span>
+                                    Username <img src="~/Iconos/User2.png" />
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                                     <li><a href="javascript:;"> Profile</a></li>
@@ -157,15 +135,10 @@
                                         </a>
                                     </li>
                                     <li><a href="javascript:;">Help</a></li>
-                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                    <li><a href="../Login/Login"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                                 </ul>
                             </li>
-
                             <li role="presentation" class="dropdown">
-                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
-                                </a>
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                     <li>
                                         <a>
@@ -231,7 +204,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Personal Information</h3>
+                            <h3>Role Permission Information</h3>
                         </div>
 
                     </div>
@@ -275,11 +248,16 @@
                                     </div>
 
                                     <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_RolePermission">
-                                            State Role Permission <span class="required">*</span>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Area">
+                                            State Area <span class="required">*</span>
                                         </label>
-                                        <input type="radio" name="Active" value="A">  Active
-                                        <input type="radio" name="Inactive" value="I">  Inactive
+                                        <div class="onoffswitch">
+                                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                                            <label class="onoffswitch-label" for="myonoffswitch">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                            </label>
+                                        </div>
                                     </div>
 
                                     <div class="ln_solid"></div>
@@ -287,6 +265,8 @@
                                         <div class="col-md-6 col-md-offset-3">
                                             <button type="submit" class="btn btn-primary">Cancel</button>
                                             <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                            <button id="Modify" type="button" class="btn btn-success">Modify</button>
+                                            <button id="Consult" type="button" class="btn btn-success">Consult</button>
                                         </div>
                                     </div>
                                 </form>

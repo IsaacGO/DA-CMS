@@ -93,14 +93,32 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Estilos\Bootstrap.css" />
+    <Content Include="Estilos\Checkbox.css" />
     <Content Include="Estilos\Dropzone.min.css" />
     <Content Include="Estilos\font-awenson.min.css" />
     <Content Include="Estilos\animate.min.css" />
     <Content Include="Estilos\nprogress.css" />
     <Content Include="Estilos\custom.min.css" />
     <Content Include="Estilos\bootstrap.min.css" />
+    <Content Include="Estilos\Style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Iconos\Abajo.png" />
+    <Content Include="Iconos\Area.png" />
+    <Content Include="Iconos\Department.png" />
+    <Content Include="Iconos\Menu.png" />
+    <Content Include="Iconos\Nota.png" />
+    <Content Include="Iconos\Note Diagram.png" />
+    <Content Include="Iconos\Note Style Corretion.png" />
+    <Content Include="Iconos\Permission.png" />
+    <Content Include="Iconos\Position.png" />
+    <Content Include="Iconos\Reports and Others.png" />
+    <Content Include="Iconos\Role Permission.png" />
+    <Content Include="Iconos\Role.png" />
+    <Content Include="Iconos\User.png" />
+    <Content Include="Iconos\User2.png" />
+    <Content Include="Scripts\CheckBox.js" />
     <Content Include="Scripts\Custom.min.js" />
     <Content Include="Scripts\Fastclick.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -129,8 +147,11 @@
     <Compile Include="Controllers\CreateRolePermissionController.cs" />
     <Compile Include="Controllers\CreateUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MonthlyReportController.cs" />
+    <Compile Include="Controllers\UnEjemploController.cs" />
     <Compile Include="Controllers\UploadNoteDiagramController.cs" />
     <Compile Include="Controllers\UploadNoteStyleCorrectionController.cs" />
+    <Compile Include="Controllers\WeeklyReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +174,8 @@
     <Content Include="Views\CreateRolePermission\CreateRolePermission.cshtml" />
     <Content Include="Views\UploadNoteDiagram\UploadNoteDiagram.cshtml" />
     <Content Include="Views\UploadNoteStyleCorrection\UploadNoteStyleCorrection.cshtml" />
+    <Content Include="Views\MonthlyReport\MonthlyReport.cshtml" />
+    <Content Include="Views\WeeklyReport\WeeklyReport.cshtml" />
     <Content Include="Views\alguno\alguno.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <None Include="Web.Debug.config">
