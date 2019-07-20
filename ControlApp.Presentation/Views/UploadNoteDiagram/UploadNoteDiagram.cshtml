@@ -46,7 +46,28 @@
                         <div class="menu_section">
                             <h3>General</h3>
                             <ul class="nav side-menu">
+                                <li><a href="../CreateUser/CreateUser"><img src="~/Iconos/User.png" /> User</a></li>
+                                <li><a href="../CreateDepartment/CreateDepartment"> <img src="~/Iconos/Department.png" /> Department</a></li>
+                                <li><a href="../CreateArea/CreateArea"> <img src="~/Iconos/Area.png" />  Area </a> </li>
+                                <li><a href="../CreatePosition/CreatePosition"> <img src="~/Iconos/Position.png" />  Position</a></li>
+                                <li><a href="../CreatePermission/CreatePermission"> <img src="~/Iconos/Permission.png" /> Permission </a></li>
+                                <li><a href="../CreateRole/CreateRole"> <img src="~/Iconos/Role.png" /> Role </a> </li>
+                                <li><a href="../CreateRolePermission/CreateRolePermission"> <img src="~/Iconos/Role Permission.png" />  Role Permission </a></li>
                                 <li><a href="../CreateNote/CreateNote"> <img src="~/Iconos/Nota.png" />  Nota </a></li>
+                                <li>
+                                    <a> <img src="~/Iconos/Reports and Others.png"> Reports and Others <img src="~/Iconos/Abajo.png"></a>
+                                    <ul class="nav child_menu">
+                                        <li>
+                                            <a> Reports <img src="~/Iconos/Abajo.png"> </a>
+                                            <ul class="nav child_menu">
+                                                <li><a href="../WeeklyReport/WeeklyReport">Weekly Reports</a> </li>
+                                                <li><a href="../MonthlyReport/MonthlyReport">Monthly Reports</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="../Graphs/Graphs"> Graphs </a></li>
+                                        <li><a href="../Indicators/Indicators"> Indicators </a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="../UploadNoteStyleCorrection/UploadNoteStyleCorrection"> <img src="~/Iconos/Note Style Corretion.png" /> Note Style Correction </a></li>
                                 <li><a href="../UploadNoteDiagram/UploadNoteDiagram"> <img src="~/Iconos/Note Diagram.png" /> Note Diagram </a></li>
                             </ul>
@@ -89,10 +110,10 @@
                             dia[0] = "Domingo";
                             dia[1] = "Lunes";
                             dia[2] = "Martes";
-                            dia[3] = "Miercoles";
+                            dia[3] = "Miércoles";
                             dia[4] = "Jueves";
                             dia[5] = "Viernes";
-                            dia[6] = "Sabado";
+                            dia[6] = "Sábado";
                             var date = new Date();
                             var day = date.getDate();
                             var month = date.getMonth() + 1;
