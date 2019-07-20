@@ -170,5 +170,9 @@ namespace ControlApp.DataAccess.Crud
         {
             throw new NotImplementedException();
         }
+        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

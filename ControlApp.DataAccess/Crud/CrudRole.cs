@@ -167,5 +167,9 @@ namespace ControlApp.DataAccess.Crud
             Context.SP_CRUD_ROLE((int)CrudActionEnum.Update, ObjRole.UpdateBy, ObjRole.ID_role, ObjRole.Name_role, ObjRole.Descrip_role);
             return true;
         }
+        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
