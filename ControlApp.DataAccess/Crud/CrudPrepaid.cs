@@ -190,9 +190,5 @@ namespace ControlApp.DataAccess.Crud
                 ObjPrepaid.Prepaid_Change, ObjPrepaid.Prepaid_Balance, ObjPrepaid.Name_Customer);
             return true;
         }
-        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

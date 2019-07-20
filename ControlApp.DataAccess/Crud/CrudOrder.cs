@@ -193,9 +193,5 @@ namespace ControlApp.DataAccess.Crud
                 , ObjOrder.Order_Date, ObjOrder.Order_Delivery);
             return true;
         }
-        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

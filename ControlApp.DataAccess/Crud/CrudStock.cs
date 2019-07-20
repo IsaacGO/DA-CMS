@@ -136,10 +136,6 @@ namespace ControlApp.DataAccess.Crud
         {
             throw new NotImplementedException();
         }
-        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
-        {
-            throw new NotImplementedException();
-        }
         public override bool Update(BaseEntity entity)
         {
             var ObjStock = (Stock)entity;

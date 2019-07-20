@@ -164,9 +164,5 @@ namespace ControlApp.DataAccess.Crud
             Context.SP_CRUD_CUSTOMER((int)CrudActionEnum.Activate, ObjCustomer.UpdateBy, ObjCustomer.ID_Customer, ObjCustomer.Customer_name);
             return true;
         }
-        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

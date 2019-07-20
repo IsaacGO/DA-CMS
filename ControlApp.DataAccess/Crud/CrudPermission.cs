@@ -10,7 +10,7 @@ namespace ControlApp.DataAccess.Crud
 {
     public class CrudPermission : CrudFactory
     {
-        sqlConnectionDataContext Context = new sqlConnectionDataContext(); 
+        sqlConnectionDataContext Context = new sqlConnectionDataContext();
         public override bool Activate(BaseEntity entity)
         {
             var ObjPer = (Permission)entity;
@@ -161,10 +161,6 @@ namespace ControlApp.DataAccess.Crud
             var ObjPer = (Permission)entity;
             Context.SP_CRUD_PER((int)CrudActionEnum.Delete, ObjPer.UpdateBy, ObjPer.ID_Per, ObjPer.ID_Dpt, ObjPer.Name_Per, ObjPer.Descrip_Per);
             return true;
-        }
-        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -143,26 +143,6 @@ namespace ControlApp.ApiCore.Management
             }
             return lst;
         }
-        public List<T> RetrieveAllForLogin<T>(User Obj)
-        {
-            var lst = new List<T>();
-            try
-            {
-                var list = _factory.RetrieveForLogin<User>(Obj);
-                if (list.Count > 0)
-                {
-                    foreach (var obj in list)
-                    {
-                        lst.Add((T)Convert.ChangeType(obj, typeof(T)));
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                //_exMan.ManageException(ex);
-            }
-            return lst;
-        }
         public void UpdateUser(User Obj)
         {
             try
