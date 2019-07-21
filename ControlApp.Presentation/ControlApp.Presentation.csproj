@@ -192,6 +192,20 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlApp.ApiCore\ControlApp.ApiCore.csproj">
+      <Project>{826d98df-2482-4611-b265-bed324f65cdc}</Project>
+      <Name>ControlApp.ApiCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlApp.DataAccess\ControlApp.DataAccess.csproj">
+      <Project>{a8abfed1-3865-4426-861a-a60b7110b3c3}</Project>
+      <Name>ControlApp.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlApp.Entities\ControlApp.Entities.csproj">
+      <Project>{af1dfb1b-6012-42f9-8608-49faf8371551}</Project>
+      <Name>ControlApp.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

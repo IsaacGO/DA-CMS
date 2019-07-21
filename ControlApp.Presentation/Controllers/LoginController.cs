@@ -25,10 +25,10 @@ namespace ControlApp.Presentation.Controllers
             //return true ? RedirectToAction("CreateNote", "CreateNote") : RedirectToAction("Login", "Login");
             return RedirectToAction("CreateNote", "CreateNote");
         }
-        public bool Authentication(User Obj)
-        {
-            var list = mUser.RetrieveAllForLogin<User>(Obj);
-            return (list.Count > 0) ? true : false;
-        }
+       // public bool Authentication(User Obj)
+        //{
+            //var list = mUser.RetrieveAllForLogin<User>(Obj);
+            //return (list.Count > 0) ? true : false;
+       // }
     }
 }
