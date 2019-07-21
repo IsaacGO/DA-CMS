@@ -20,6 +20,7 @@
     <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Estilos/custom.min.css" rel="stylesheet" />
+    <link href="~/Estilos/Chart.css" rel="stylesheet" />
 </head>
 
 <body class="nav-md">
@@ -199,7 +200,7 @@
                 </div>
             </div>
             <!-- /top navigation -->
-            <!-- page content -->
+            <!-- Modulo Grafica -->
             <div class="right_col" role="main">
                 <div class="">
                     <div class="page-title">
@@ -209,44 +210,263 @@
 
                     </div>
                     <div class="clearfix"></div>
+                    <!-- Graficos de Usuario -->
 
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div style="width:50%">
                             <div class="x_panel">
                                 <ul class="nav navbar-right panel_toolbox"></ul>
 
                                 <form class="form-horizontal form-label-left" novalidate>
 
-                                    
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-10 col-sm-5 col-xs-5" for="Id_Area">
+                                            Top Monthly Notes by User <span class="required"></span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <canvas id="myChart" width="100" height="100"></canvas>
+                                    </div>
 
+                                    <div class="x_panel">
+                                        <ul class="nav navbar-right panel_toolbox"></ul>
 
+                                        <form class="form-horizontal form-label-left" novalidate>
 
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-10 col-sm-10 col-xs-10" for="Id_Area">
+                                                    Top Weekly Notes by User <span class="required"></span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <canvas id="myChart2" width="100" height="100"></canvas>
+                                            </div>
+                                        </form>
 
-
-
+                                    </div>
                                 </form>
+                            </div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                            </div>
+                        </div>
+
+                        <!-- Graficos de Departamento -->
+
+                        <div style="width:50%">
+                            <div class="x_panel">
+                                <ul class="nav navbar-right panel_toolbox"></ul>
+
+                                <form class="form-horizontal form-label-left" novalidate>
+
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-10 col-sm-5 col-xs-5" for="Id_Area">
+                                            Top Monthly Notes by Department <span class="required"></span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <canvas id="myChart3" width="100" height="100"></canvas>
+                                    </div>
+                                    <div class="x_panel">
+                                        <ul class="nav navbar-right panel_toolbox"></ul>
+
+                                        <form class="form-horizontal form-label-left" novalidate>
+
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-10 col-sm-10 col-xs-10" for="Id_Area">
+                                                    Top Weekly Notes by Department <span class="required"></span>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <canvas id="myChart4" width="100" height="100"></canvas>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Scripts -->
+
         </div>
+
+        <!-- jQuery -->
+        <script src="~/Scripts/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="~/Scripts/Fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="~/Scripts/Nprogress.js"></script>
+        <!-- validator -->
+        <script src="~/Scripts/validator.js"></script>
+        <!-- jQuery Smart Wizard -->
+        <script src="~/Scripts/jquery.smartWizard.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="~/Scripts/Custom.min.js"></script>
+        <script src="~/Scripts/Chart.js"></script>
+
+        <!-- Scripts de Usuario -->
+
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Juan', 'Roger', 'Yeison', 'Luis', 'Marvin', 'Carlos'],
+                    datasets: [{
+                        label: '# Users',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+        <script>
+            var ctx = document.getElementById('myChart2').getContext('2d');
+            var myChart2 = new Chart(ctx, {
+                type: 'polarArea',
+                data: {
+                    labels: ['Juan', 'Roger', 'Yeison', 'Luis', 'Marvin', 'Carlos'],
+                    datasets: [{
+                        label: '# Users',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+        <!-- Scripts de Departamento -->
+
+        <script>
+            var ctx = document.getElementById('myChart3').getContext('2d');
+            var myChart3 = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Redacción', 'Recursos Humanos', 'xxx', 'xxxx'],
+                    datasets: [{
+                        label: '# Departaments',
+                        data: [03, 10, 2, 15],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+        <script>
+            var ctx = document.getElementById('myChart4').getContext('2d');
+            var myChart4 = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Redacción', 'Recursos Humanos', 'xxx', 'xxxx'],
+                    datasets: [{
+                        label: '# Departaments',
+                        data: [05, 07, 14, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
     </div>
-
-    <!-- jQuery -->
-    <script src="~/Scripts/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="~/Scripts/Fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="~/Scripts/Nprogress.js"></script>
-    <!-- validator -->
-    <script src="~/Scripts/validator.js"></script>
-    <!-- jQuery Smart Wizard -->
-    <script src="~/Scripts/jquery.smartWizard.js"></script>
-    <!-- Custom Theme Scripts -->
-    <script src="~/Scripts/Custom.min.js"></script>
-
 </body>
 </html>

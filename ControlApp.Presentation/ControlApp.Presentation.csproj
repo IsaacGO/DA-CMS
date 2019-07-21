@@ -94,6 +94,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Estilos\Bootstrap.css" />
+    <Content Include="Estilos\Chart.css" />
     <Content Include="Estilos\Checkbox.css" />
     <Content Include="Estilos\Dropzone.min.css" />
     <Content Include="Estilos\font-awenson.min.css" />
@@ -125,6 +126,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Dropzone.min.js" />
+    <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\jquery.smartWizard.js" />
     <Content Include="Scripts\Nprogress.js" />
     <Content Include="Scripts\Jquery.min.js" />

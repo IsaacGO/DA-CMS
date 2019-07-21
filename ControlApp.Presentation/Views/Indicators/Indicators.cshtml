@@ -20,6 +20,7 @@
     <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Estilos/custom.min.css" rel="stylesheet" />
+    <link href="~/Estilos/Chart.css" rel="stylesheet" />
 </head>
 
 <body class="nav-md">
@@ -211,21 +212,47 @@
                     <div class="clearfix"></div>
 
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div style="width:80%">
                             <div class="x_panel">
                                 <ul class="nav navbar-right panel_toolbox"></ul>
 
                                 <form class="form-horizontal form-label-left" novalidate>
 
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-4 col-sm-4 col-xs-12" for="">
+                                            Select what you want to print  <span class="required"></span>
+                                        </label>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <select class="select2_single form-control" tabindex="1" name="" id="" required="required">
+                                            <option>Choose option</option>
+                                            <option>Users</option>
+                                            <option>Departaments</option>
+                                            <option>Unpublished</option>
+                                        </select>
+                                    </div>
 
-
-
-
-
+                                    <br /><br />
+                                          <div class="form-group">
+                                              <div class="col-md-6 col-md-offset-3">
+                                                  <br /><br />
+                                                  <button type="submit" class="btn btn-primary" onclick="window.print ()">Imprimir</button>
+                                              </div>
+                                          </div>
+                                            <!-- page content -->
+                                            <div class="ln_solid"></div>
+                                            <div class="form-group">
+                                            </div>
+                                    
                                 </form>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
                 </div>
             </div>
         </div>
@@ -245,6 +272,6 @@
     <script src="~/Scripts/jquery.smartWizard.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="~/Scripts/Custom.min.js"></script>
-
+    <script src="~/Scripts/Chart.js"></script>
 </body>
 </html>
