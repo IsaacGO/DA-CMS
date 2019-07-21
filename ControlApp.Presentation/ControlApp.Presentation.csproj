@@ -102,6 +102,7 @@
     <Content Include="Estilos\nprogress.css" />
     <Content Include="Estilos\custom.min.css" />
     <Content Include="Estilos\bootstrap.min.css" />
+    <Content Include="Estilos\Responsive.css" />
     <Content Include="Estilos\Style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
