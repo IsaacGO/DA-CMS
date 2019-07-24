@@ -183,7 +183,7 @@
                         </div>
                         <div class="x_content">
 
-                            <form class="form-horizontal form-label-left" novalidate>
+                            <form class="form-horizontal form-label-left" novalidate method="post" action="action.cgi" enctype="multipart/form-data">
 
                                 <div class="item form-group">
                                     <br /><br /><br /><br /><br /><br />
@@ -191,7 +191,7 @@
                                         Upload Note Style Correction <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="file" name="archivo">
+                                        <input type="file" name="adjunto" accept=".pdf,.jpg,.png, .docs" multiple>
                                     </div>
                                 </div>
                                 <br /><br />
