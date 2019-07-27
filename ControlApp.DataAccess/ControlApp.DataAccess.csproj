@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlAppDevDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ControlAppDevDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Crud\CrudAccountreceivable.cs" />
     <Compile Include="Crud\CrudActionEnum.cs" />
     <Compile Include="Crud\CrudArea.cs" />
@@ -73,6 +78,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ControlAppDevDataSet.xsc">
+      <DependentUpon>ControlAppDevDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ControlAppDevDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ControlAppDevDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ControlAppDevDataSet.xss">
+      <DependentUpon>ControlAppDevDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

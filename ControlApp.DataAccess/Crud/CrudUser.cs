@@ -172,28 +172,6 @@ namespace ControlApp.DataAccess.Crud
             }
             return lst;
         }
-        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
-        {
-            var ObjUser = new User();
-            var lst = new List<T>();
-            List<User> MyList = new List<User>();
-            var Query = Context.SP_CRUD_USER((int)CrudActionEnum.RetrieveByName, ObjUser.IdSession, ObjUser.ID_User, ObjUser.User_name, ObjUser.User_email
-                , ObjUser.ID_Dpt, ObjUser.ID_area, ObjUser.ID_position, ObjUser.ID_Role, ObjUser.User_nickname, ObjUser.User_pass).ToList();
-            foreach (SP_CRUD_USERResult Element in Query)
-            {
-                User Obj = new User(Element.ID_USER, Element.USER_NAME, Element.USER_EMAIL, Element.NAME_DPT, Element.AREA_NAME, Element.NAME_POSITION,
-                    Element.NAME_ROLE, Element.USER_NICKNAME, Element.USER_PASSWORD);
-                MyList.Add(Obj);
-            }
-            if (MyList.Count > 0)
-            {
-                foreach (var obj in MyList)
-                {
-                    lst.Add((T)Convert.ChangeType(obj, typeof(T)));
-                }
-            }
-            return lst;
-        }
         public override bool Update(BaseEntity entity)
         {
 

@@ -11,24 +11,24 @@ namespace ControlApp.Presentation.Controllers
     public class LoginController : Controller
     {
         UserManagement mUser = new UserManagement();
-        // GET: Login
-        public ActionResult Login()
-        {
-            return View();
-        }
 
-        [HttpPost]
-        public ActionResult Login(User Obj)
+        // GET: Prueba
+        public ActionResult Login() { return View(); }
+
+        public ActionResult Authentication(string Username, string Password)
         {
-            //User usr = new User();
-            //return Authentication(usr) ? View("CreateNote") : View();
-            //return true ? RedirectToAction("CreateNote", "CreateNote") : RedirectToAction("Login", "Login");
-            return RedirectToAction("CreateNote", "CreateNote");
+
+            var list = mUser.RetrieveAllUser<User>();
+
+            if (list.Count > 0)
+            {
+                foreach (var obj in list)
+                {
+                    if (obj.User_nickname.Equals(Username) && obj.User_pass.Equals(Password)) { return RedirectToAction("Index"); }
+                }
+            }
+            return RedirectToAction("Login");
         }
-        public bool Authentication(User Obj)
-        {
-            var list = mUser.RetrieveAllForLogin<User>(Obj);
-            return (list.Count > 0) ? true : false;
-        }
+        public ActionResult Index() { return View(); }
     }
 }

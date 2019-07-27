@@ -196,9 +196,5 @@ namespace ControlApp.DataAccess.Crud
             ObjCxc.Quantity_Retreat, ObjCxc.Quantity_Return, ObjCxc.Total_Cxc, ObjCxc.Balance_Cxc, ObjCxc.Name_Customer, ObjCxc.Name_Product);
             return true;
         }
-        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

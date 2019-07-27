@@ -155,6 +155,7 @@
     <Content Include="Views\UploadNoteStyleCorrection\UploadNoteStyleCorrection.cshtml" />
     <Content Include="Views\alguno\alguno.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

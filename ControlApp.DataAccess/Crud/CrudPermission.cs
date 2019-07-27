@@ -162,9 +162,5 @@ namespace ControlApp.DataAccess.Crud
             Context.SP_CRUD_PER((int)CrudActionEnum.Delete, ObjPer.UpdateBy, ObjPer.ID_Per, ObjPer.ID_Dpt, ObjPer.Name_Per, ObjPer.Descrip_Per);
             return true;
         }
-        public override List<T> RetrieveForLogin<T>(BaseEntity entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

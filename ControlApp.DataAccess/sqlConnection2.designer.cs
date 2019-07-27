@@ -75,7 +75,7 @@ namespace ControlApp.DataAccess
     #endregion
 		
 		public sqlConnectionDataContext() : 
-				base(global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString, mappingSource)
+				base(global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
