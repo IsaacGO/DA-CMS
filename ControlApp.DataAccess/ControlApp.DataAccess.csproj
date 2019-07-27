@@ -52,6 +52,7 @@
     <Compile Include="Crud\CrudCustomer.cs" />
     <Compile Include="Crud\CrudDepartament.cs" />
     <Compile Include="Crud\CrudFactory.cs" />
+    <Compile Include="Crud\CrudNote.cs" />
     <Compile Include="Crud\CrudOrder.cs" />
     <Compile Include="Crud\CrudPermission.cs" />
     <Compile Include="Crud\CrudPosition.cs" />
