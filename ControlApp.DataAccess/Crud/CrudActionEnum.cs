@@ -17,7 +17,6 @@ namespace ControlApp.DataAccess.Crud
         RetrieveByName,
         Update,
         Delete,
-        Activate,
-        RetrieveByIdUser,
+        Activate
     }
 }

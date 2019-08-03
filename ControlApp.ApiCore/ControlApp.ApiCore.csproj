@@ -49,6 +49,7 @@
     <Compile Include="Management\BaseManagement.cs" />
     <Compile Include="Management\CustomerManagement.cs" />
     <Compile Include="Management\DepartamentManagement.cs" />
+    <Compile Include="Management\NoteManagement.cs" />
     <Compile Include="Management\OrderManagement.cs" />
     <Compile Include="Management\PermissionManagament.cs" />
     <Compile Include="Management\PositionManagement.cs" />
