@@ -45,6 +45,7 @@
     <Compile Include="Objects\BaseEntity.cs" />
     <Compile Include="Objects\Customer.cs" />
     <Compile Include="Objects\Departament.cs" />
+    <Compile Include="Objects\Note.cs" />
     <Compile Include="Objects\Order.cs" />
     <Compile Include="Objects\Permission.cs" />
     <Compile Include="Objects\Position.cs" />

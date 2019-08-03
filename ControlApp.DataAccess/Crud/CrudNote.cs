@@ -18,23 +18,23 @@ namespace ControlApp.DataAccess.Crud
         {
 
             var ObjNote = (Note)entity;
-            Context.SP_CRUD_USER((int)CrudActionEnum.Activate, ObjNote.Note_UpdateBy, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Content
-            , ObjNote.Note_Date);
+            Context.SP_CRUD_NOTE((int)CrudActionEnum.Activate, ObjNote.UpdateBy, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
+            , ObjNote.Note_Content);
             return true;
         }
         public override bool Create(BaseEntity entity)
         {
             var ObjNote = (Note)entity;
-            Context.SP_CRUD_USER((int)CrudActionEnum.Create, ObjNote.Note_CreateBy, ObjNote.ID_Note, ObjNote.Note_Title,ObjNote.Note_Content
-                ,ObjNote.Note_Date);
+            Context.SP_CRUD_NOTE((int)CrudActionEnum.Create, ObjNote.CreateBy, ObjNote.ID_Note, ObjNote.Note_Title,ObjNote.Note_Date
+                ,ObjNote.Note_Content);
             return true;
         }
         public override bool Delete(BaseEntity entity)
         {
 
             var ObjNote = (Note)entity;
-            Context.SP_CRUD_USER((int)CrudActionEnum.Delete, ObjNote.Note_UpdateBy, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Content
-            , ObjNote.Note_Date);
+            Context.SP_CRUD_NOTE((int)CrudActionEnum.Delete, ObjNote.UpdateBy, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date   
+            , ObjNote.Note_Content);
             return true;
         }
         public override List<T> SuperRetrieve<T>()
@@ -42,12 +42,12 @@ namespace ControlApp.DataAccess.Crud
             var ObjNote = new Note();
             var lst = new List<T>();
             List<Note> MyList = new List<Note>();
-            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.SuperRetrieve, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Content
-                , ObjNote.Note_Date).ToList();
+            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.SuperRetrieve, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
+                , ObjNote.Note_Content).ToList();
             foreach (SP_CRUD_NOTEResult Element in Query)
             {
-                Note Obj = new Note(Element.ID_NOTE,Element.NOTE_TITLE,Element.NOTE_CONTENT,Element.NOTE_DATE,Element.NOTE_STATE,
-                    Element.NOTE_CREATEBY, Element.NOTE_UPDATEBY,Element.NOTE_CREATEDATE,Element.NOTE_UPDATEDATE);
+                Note Obj = new Note(Element.ID_NOTE,Element.NOTE_TITLE,Element.NOTE_DATE,Element.NOTE_CONTENT,Element.NOTE_STATE,
+                    Element.NOTE_CREATEBY, Element.NOTE_CREATEDATE,Element.NOTE_UPDATEBY,Element.NOTE_UPDATEDATE);
                 MyList.Add(Obj);
             }
             if (MyList.Count > 0)
@@ -64,12 +64,12 @@ namespace ControlApp.DataAccess.Crud
             var ObjNote = new Note();
             var lst = new List<T>();
             List<Note> MyList = new List<Note>();
-            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.SuperRetrieve, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Content
-                , ObjNote.Note_Date).ToList();
+            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.SuperRetrieve, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
+                , ObjNote.Note_Content).ToList();
             foreach (SP_CRUD_NOTEResult Element in Query)
             {
-                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_CONTENT, Element.NOTE_DATE, Element.NOTE_STATE,
-                    Element.NOTE_CREATEBY, Element.NOTE_UPDATEBY, Element.NOTE_CREATEDATE, Element.NOTE_UPDATEDATE);
+                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_DATE, Element.NOTE_CONTENT, Element.NOTE_STATE,
+                    Element.NOTE_CREATEBY, Element.NOTE_CREATEDATE, Element.NOTE_UPDATEBY, Element.NOTE_UPDATEDATE);
                 MyList.Add(Obj);
             }
             if (MyList.Count > 0)
@@ -86,12 +86,12 @@ namespace ControlApp.DataAccess.Crud
             var ObjNote = new Note();
             var lst = new List<T>();
             List<Note> MyList = new List<Note>();
-            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.SuperRetrieve, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Content
-                , ObjNote.Note_Date).ToList();
+            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.SuperRetrieve, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
+                , ObjNote.Note_Content).ToList();
             foreach (SP_CRUD_NOTEResult Element in Query)
             {
-                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_CONTENT, Element.NOTE_DATE, Element.NOTE_STATE,
-                    Element.NOTE_CREATEBY, Element.NOTE_UPDATEBY, Element.NOTE_CREATEDATE, Element.NOTE_UPDATEDATE);
+                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_DATE, Element.NOTE_CONTENT, Element.NOTE_STATE,
+                    Element.NOTE_CREATEBY, Element.NOTE_CREATEDATE, Element.NOTE_UPDATEBY, Element.NOTE_UPDATEDATE);
                 MyList.Add(Obj);
             }
             if (MyList.Count > 0)
@@ -108,11 +108,11 @@ namespace ControlApp.DataAccess.Crud
             var ObjNote = new Note();
             var lst = new List<T>();
             List<Note> MyList = new List<Note>();
-            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.RetrieveAll, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Content
-                , ObjNote.Note_Date).ToList();
+            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.RetrieveAll, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
+                , ObjNote.Note_Content).ToList();
             foreach (SP_CRUD_NOTEResult Element in Query)
             {
-                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_CONTENT, Element.NOTE_DATE);
+                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_DATE, Element.NOTE_CONTENT);
                 MyList.Add(Obj);
             }
             if (MyList.Count > 0)
@@ -129,11 +129,11 @@ namespace ControlApp.DataAccess.Crud
             var ObjNote = new Note();
             var lst = new List<T>();
             List<Note> MyList = new List<Note>();
-            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.RetrieveAll, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Content
-                , ObjNote.Note_Date).ToList();
+            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.RetrieveAll, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
+                , ObjNote.Note_Content).ToList();
             foreach (SP_CRUD_NOTEResult Element in Query)
             {
-                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_CONTENT, Element.NOTE_DATE);
+                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_DATE, Element.NOTE_CONTENT);
                 MyList.Add(Obj);
             }
             if (MyList.Count > 0)
@@ -150,11 +150,11 @@ namespace ControlApp.DataAccess.Crud
             var ObjNote = new Note();
             var lst = new List<T>();
             List<Note> MyList = new List<Note>();
-            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.RetrieveAll, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Content
-                , ObjNote.Note_Date).ToList();
+            var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.RetrieveAll, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
+                , ObjNote.Note_Content).ToList();
             foreach (SP_CRUD_NOTEResult Element in Query)
             {
-                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_CONTENT, Element.NOTE_DATE);
+                Note Obj = new Note(Element.ID_NOTE, Element.NOTE_TITLE, Element.NOTE_DATE, Element.NOTE_CONTENT);
                 MyList.Add(Obj);
             }
             if (MyList.Count > 0)
@@ -169,9 +169,9 @@ namespace ControlApp.DataAccess.Crud
         public override bool Update(BaseEntity entity)
         {
 
-            var ObjNote = (User)entity;
-            Context.SP_CRUD_NOTE((int)CrudActionEnum.Update, ObjNote.Note_UpdateBy, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Content
-                , ObjNote.Note_Date);
+            var ObjNote = (Note)entity;
+            Context.SP_CRUD_NOTE((int)CrudActionEnum.Update, ObjNote.UpdateBy, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
+                , ObjNote.Note_Content);
             return true;
         }
         public override List<T> RetrieveByIdUser<T>(BaseEntity entity)
