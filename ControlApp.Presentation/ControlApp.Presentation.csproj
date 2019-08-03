@@ -93,20 +93,41 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Estilos\Bootstrap.css" />
+    <Content Include="Estilos\Chart.css" />
+    <Content Include="Estilos\Checkbox.css" />
     <Content Include="Estilos\Dropzone.min.css" />
     <Content Include="Estilos\font-awenson.min.css" />
     <Content Include="Estilos\animate.min.css" />
     <Content Include="Estilos\nprogress.css" />
     <Content Include="Estilos\custom.min.css" />
     <Content Include="Estilos\bootstrap.min.css" />
+    <Content Include="Estilos\Responsive.css" />
+    <Content Include="Estilos\Style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Iconos\Abajo.png" />
+    <Content Include="Iconos\Area.png" />
+    <Content Include="Iconos\Department.png" />
+    <Content Include="Iconos\Menu.png" />
+    <Content Include="Iconos\Nota.png" />
+    <Content Include="Iconos\Note Diagram.png" />
+    <Content Include="Iconos\Note Style Corretion.png" />
+    <Content Include="Iconos\Permission.png" />
+    <Content Include="Iconos\Position.png" />
+    <Content Include="Iconos\Reports and Others.png" />
+    <Content Include="Iconos\Role Permission.png" />
+    <Content Include="Iconos\Role.png" />
+    <Content Include="Iconos\User.png" />
+    <Content Include="Iconos\User2.png" />
+    <Content Include="Scripts\CheckBox.js" />
     <Content Include="Scripts\Custom.min.js" />
     <Content Include="Scripts\Fastclick.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Dropzone.min.js" />
+    <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\jquery.smartWizard.js" />
     <Content Include="Scripts\Nprogress.js" />
     <Content Include="Scripts\Jquery.min.js" />
@@ -128,9 +149,14 @@
     <Compile Include="Controllers\CreateRoleController.cs" />
     <Compile Include="Controllers\CreateRolePermissionController.cs" />
     <Compile Include="Controllers\CreateUserController.cs" />
+    <Compile Include="Controllers\GraphsController.cs" />
+    <Compile Include="Controllers\IndicatorsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MonthlyReportController.cs" />
+    <Compile Include="Controllers\UnEjemploController.cs" />
     <Compile Include="Controllers\UploadNoteDiagramController.cs" />
     <Compile Include="Controllers\UploadNoteStyleCorrectionController.cs" />
+    <Compile Include="Controllers\WeeklyReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -144,6 +170,7 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\CreateDepartment\CreateDepartment.cshtml" />
     <Content Include="Views\CreateArea\CreateArea.cshtml" />
@@ -153,9 +180,12 @@
     <Content Include="Views\CreateRolePermission\CreateRolePermission.cshtml" />
     <Content Include="Views\UploadNoteDiagram\UploadNoteDiagram.cshtml" />
     <Content Include="Views\UploadNoteStyleCorrection\UploadNoteStyleCorrection.cshtml" />
-    <Content Include="Views\alguno\alguno.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\MonthlyReport\MonthlyReport.cshtml" />
+    <Content Include="Views\WeeklyReport\WeeklyReport.cshtml" />
+    <Content Include="Views\Graphs\Graphs.cshtml" />
+    <Content Include="Views\Indicators\Indicators.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,6 +201,10 @@
     <ProjectReference Include="..\ControlApp.ApiCore\ControlApp.ApiCore.csproj">
       <Project>{826d98df-2482-4611-b265-bed324f65cdc}</Project>
       <Name>ControlApp.ApiCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlApp.DataAccess\ControlApp.DataAccess.csproj">
+      <Project>{a8abfed1-3865-4426-861a-a60b7110b3c3}</Project>
+      <Name>ControlApp.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\ControlApp.Entities\ControlApp.Entities.csproj">
       <Project>{af1dfb1b-6012-42f9-8608-49faf8371551}</Project>

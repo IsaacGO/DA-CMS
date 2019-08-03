@@ -1,7 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "CreateDepartment";
+    ViewBag.Title = "WeeklyReport";
 }
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,27 +21,21 @@
     <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Estilos/custom.min.css" rel="stylesheet" />
-    <!--Checkbox-->
-    <link href="~/Estilos/Checkbox.css" rel="stylesheet" />
     <link href="~/Estilos/Responsive.css" rel="stylesheet" />
 </head>
-
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
-
                     <div class="clearfix"></div>
-
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_info">
-                            <span>Welcome</span>
+                            <span>Welcome,</span>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
-
                     <br />
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -65,8 +60,8 @@
                                                 <li><a href="../MonthlyReport/MonthlyReport">Monthly Reports</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="../Graphs/Graphs"> Graphs </a></li>
-                                        <li><a href="../Indicators/Indicators"> Indicators </a></li>
+                                        <li><a href=""> Graphs </a></li>
+                                        <li><a href=""> Indicators </a></li>
                                     </ul>
                                 </li>
                                 <li><a href="../UploadNoteStyleCorrection/UploadNoteStyleCorrection"> <img src="~/Iconos/Note Style Corretion.png" /> Note Style Correction </a></li>
@@ -96,6 +91,7 @@
                         <div class="nav toggle">
                             <a id="menu_toggle"> <img src="~/Iconos/Menu.png" /> </a>
                         </div>
+
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -127,6 +123,39 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a>
+                                            <span>
+                                                <span>Usuario</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span>
+                                                <span>Usuario</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span>
+                                                <span>Usuario</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
                                         <div class="text-center">
                                             <a>
                                                 <strong>See All Alerts</strong>
@@ -146,49 +175,101 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Department Information</h3>
+                            <h3>
+                                Weekly Report
+                            </h3>
                         </div>
-
                     </div>
                     <div class="clearfix"></div>
-
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <ul class="nav navbar-right panel_toolbox"></ul>
+                                <br />
+                                <br />
                                 <form class="form-horizontal form-label-left" novalidate>
-
                                     <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_Dept">
-                                            Name Department <span class="required">*</span>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_Week">
+                                            Week <span class="required"></span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="Name_Dept" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="Name_Dept" required="required" type="text">
+                                            <input type="week" id="week" name="week" required="required" class="form-control col-md-7 col-xs-12" />
                                         </div>
                                     </div>
-
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Area">
-                                            State Area <span class="required">*</span>
-                                        </label>
-                                        <div class="onoffswitch">
-                                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                                            <label class="onoffswitch-label" for="myonoffswitch">
-                                                <span class="onoffswitch-inner"></span>
-                                                <span class="onoffswitch-switch"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ln_solid"></div>
+                                    <br />
                                     <div class="form-group">
                                         <div class="col-md-6 col-md-offset-3">
-                                            <button type="submit" class="btn btn-primary">Cancel</button>
-                                            <button id="send" type="submit" class="btn btn-success">Submit</button>
-                                            <button id="Modify" type="button" class="btn btn-success">Modify</button>
-                                            <button id="Consult" type="button" class="btn btn-success">Consult</button>
+                                            <button id="" type="button" class="btn btn-success">Generate</button>
                                         </div>
                                     </div>
+                                </form>
+                                <br />
+                                <br />
+                                <form class="form-horizontal form-label-left" novalidate>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2>Report</h2>
+                                                <ul class="nav navbar-right panel_toolbox"></ul>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="x_content">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Title Note</th>
+                                                            <th>Journalist Name </th>
+                                                            <th>Area</th>
+                                                            <th>Date</th>
+                                                            <th>State</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Accidente Heredia</td>
+                                                            <td>Jahaira Morales Vargas</td>
+                                                            <td>Sucesos</td>
+                                                            <td>16/4/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Partido Saprissa vs Heredia</td>
+                                                            <td>Paola Corrales Gómez</td>
+                                                            <td>Deportes</td>
+                                                            <td>22/3/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Reino Unido denuncia a Irán </td>
+                                                            <td>Kenneth Calderon </td>
+                                                            <td>Internacionales</td>
+                                                            <td>01/5/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Policías chocan y alcoholemia da positiva </td>
+                                                            <td>Jahaira Morales Vargas </td>
+                                                            <td>Sucesos</td>
+                                                            <td>9/7/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>El país que quiero </td>
+                                                            <td>Kenneth Calderon </td>
+                                                            <td>Opinion</td>
+                                                            <td>18/1/2019</td>
+                                                            <td>Habilitada</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <button type="submit" class="btn btn-primary" onclick="window.print ()">Imprimir</button>
+                                        <button id="Guardar" type="button" class="btn btn-success">Guardar</button>
+                                    </div>
+                                    <div class="ln_solid"></div>
                                 </form>
                             </div>
                         </div>
@@ -211,7 +292,5 @@
         <script src="~/Scripts/jquery.smartWizard.js"></script>
         <!-- Custom Theme Scripts -->
         <script src="~/Scripts/Custom.min.js"></script>
-
 </body>
 </html>
-

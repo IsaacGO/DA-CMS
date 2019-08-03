@@ -8,8 +8,8 @@ namespace ControlApp.DataAccess.Crud
 {
     public enum CrudActionEnum
     {
-        Create, 
-        SuperRetrieve,//PCG
+        Create, // Prueba
+        SuperRetrieve,
         SuperRetrieveById,
         SuperRetrieveByName,
         RetrieveAll,
@@ -17,7 +17,6 @@ namespace ControlApp.DataAccess.Crud
         RetrieveByName,
         Update,
         Delete,
-        Activate,
-        RetrieveByIdUser
+        Activate
     }
 }

@@ -11,7 +11,6 @@ namespace ControlApp.Presentation.Controllers
     public class LoginController : Controller
     {
         UserManagement mUser = new UserManagement();
-
         // GET: Prueba
         public ActionResult Login() { return View(); }
 

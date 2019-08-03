@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "CreateDepartment";
+    ViewBag.Title = "Indicators";
 }
 
 <!DOCTYPE html>
@@ -20,8 +20,7 @@
     <link href="~/Estilos/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
     <link href="~/Estilos/custom.min.css" rel="stylesheet" />
-    <!--Checkbox-->
-    <link href="~/Estilos/Checkbox.css" rel="stylesheet" />
+    <link href="~/Estilos/Chart.css" rel="stylesheet" />
     <link href="~/Estilos/Responsive.css" rel="stylesheet" />
 </head>
 
@@ -42,6 +41,7 @@
                     <!-- /menu profile quick info -->
 
                     <br />
+
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
@@ -127,6 +127,39 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a>
+                                            <span>
+                                                <span>Usuario</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span>
+                                                <span>Usuario</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span>
+                                                <span>Usuario</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
                                         <div class="text-center">
                                             <a>
                                                 <strong>See All Alerts</strong>
@@ -146,72 +179,73 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Department Information</h3>
+                            <h3>Indicators</h3>
                         </div>
 
                     </div>
                     <div class="clearfix"></div>
 
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div style="width:80%">
                             <div class="x_panel">
                                 <ul class="nav navbar-right panel_toolbox"></ul>
+
                                 <form class="form-horizontal form-label-left" novalidate>
 
                                     <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_Dept">
-                                            Name Department <span class="required">*</span>
+                                        <label class="control-label col-md-4 col-sm-4 col-xs-12" for="">
+                                            Select what you want to print  <span class="required"></span>
                                         </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="Name_Dept" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="Name_Dept" required="required" type="text">
-                                        </div>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <select class="select2_single form-control" tabindex="1" name="" id="" required="required">
+                                            <option>Choose option</option>
+                                            <option>Users</option>
+                                            <option>Departaments</option>
+                                            <option>Unpublished</option>
+                                        </select>
                                     </div>
 
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Area">
-                                            State Area <span class="required">*</span>
-                                        </label>
-                                        <div class="onoffswitch">
-                                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                                            <label class="onoffswitch-label" for="myonoffswitch">
-                                                <span class="onoffswitch-inner"></span>
-                                                <span class="onoffswitch-switch"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="ln_solid"></div>
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <button type="submit" class="btn btn-primary">Cancel</button>
-                                            <button id="send" type="submit" class="btn btn-success">Submit</button>
-                                            <button id="Modify" type="button" class="btn btn-success">Modify</button>
-                                            <button id="Consult" type="button" class="btn btn-success">Consult</button>
-                                        </div>
-                                    </div>
+                                    <br /><br />
+                                          <div class="form-group">
+                                              <div class="col-md-6 col-md-offset-3">
+                                                  <br /><br />
+                                                  <button type="submit" class="btn btn-primary" onclick="window.print ()">Imprimir</button>
+                                              </div>
+                                          </div>
+                                            <!-- page content -->
+                                            <div class="ln_solid"></div>
+                                            <div class="form-group">
+                                            </div>
+                                    
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                </div>
             </div>
         </div>
     </div>
-        <!-- jQuery -->
-        <script src="~/Scripts/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="~/Scripts/bootstrap.min.js"></script>
-        <!-- FastClick -->
-        <script src="~/Scripts/Fastclick.js"></script>
-        <!-- NProgress -->
-        <script src="~/Scripts/Nprogress.js"></script>
-        <!-- validator -->
-        <script src="~/Scripts/validator.js"></script>
-        <!-- jQuery Smart Wizard -->
-        <script src="~/Scripts/jquery.smartWizard.js"></script>
-        <!-- Custom Theme Scripts -->
-        <script src="~/Scripts/Custom.min.js"></script>
 
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Scripts/Fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="~/Scripts/Nprogress.js"></script>
+    <!-- validator -->
+    <script src="~/Scripts/validator.js"></script>
+    <!-- jQuery Smart Wizard -->
+    <script src="~/Scripts/jquery.smartWizard.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/Scripts/Custom.min.js"></script>
+    <script src="~/Scripts/Chart.js"></script>
 </body>
 </html>
-
