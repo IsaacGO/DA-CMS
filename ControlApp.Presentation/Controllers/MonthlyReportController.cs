@@ -11,6 +11,7 @@ namespace ControlApp.Presentation.Controllers
         // GET: MontlyReport
         public ActionResult MonthlyReport()
         {
+            ViewBag.username = Session["username"];
             return View();
         }
     }

@@ -11,6 +11,7 @@ namespace ControlApp.Presentation.Controllers
         // GET: CreateRole
         public ActionResult CreateRole()
         {
+            ViewBag.username = Session["username"];
             return View();
         }
     }

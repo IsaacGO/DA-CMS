@@ -11,6 +11,7 @@ namespace ControlApp.Presentation.Controllers
         // GET: UploadNoteStyleCorrection
         public ActionResult UploadNoteStyleCorrection()
         {
+            ViewBag.username = Session["username"];
             return View();
         }
     }

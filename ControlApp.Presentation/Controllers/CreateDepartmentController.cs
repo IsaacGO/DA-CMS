@@ -11,6 +11,7 @@ namespace ControlApp.Presentation.Controllers
         // GET: CreateDepartment
         public ActionResult CreateDepartment()
         {
+            ViewBag.username = Session["username"];
             return View();
         }
     }

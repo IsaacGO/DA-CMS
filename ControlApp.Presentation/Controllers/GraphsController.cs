@@ -11,6 +11,7 @@ namespace ControlApp.Presentation.Controllers
         // GET: Graphs
         public ActionResult Graphs()
         {
+            ViewBag.username = Session["username"];
             return View();
         }
     }

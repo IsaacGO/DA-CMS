@@ -11,6 +11,7 @@ namespace ControlApp.Presentation.Controllers
         // GET: CreateArea
         public ActionResult CreateArea()
         {
+            ViewBag.username = Session["username"];
             return View();
         }
     }

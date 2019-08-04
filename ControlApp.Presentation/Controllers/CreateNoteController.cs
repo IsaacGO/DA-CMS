@@ -44,7 +44,7 @@ namespace ControlApp.Presentation.Controllers
         [HttpPost]
         public ActionResult Consult()
         {
-            
+            ViewBag.Msg = "Isaac";
             return View("CreateNote");
         }
 

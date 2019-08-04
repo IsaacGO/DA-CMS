@@ -11,7 +11,8 @@ namespace ControlApp.Presentation.Controllers
         // GET: UploadNoteDiagram
         public ActionResult UploadNoteDiagram()
         {
-            return View();
+            ViewBag.username = Session["username"];
+            return View(); return View();
         }
     }
 }

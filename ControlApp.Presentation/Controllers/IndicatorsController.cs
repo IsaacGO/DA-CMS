@@ -11,6 +11,7 @@ namespace ControlApp.Presentation.Controllers
         // GET: Indicators
         public ActionResult Indicators()
         {
+            ViewBag.username = Session["username"];
             return View();
         }
     }
