@@ -32,15 +32,6 @@
                 <div class="left_col scroll-view">
 
                     <div class="clearfix"></div>
-
-                    <!-- menu profile quick info -->
-                    <div class="profile clearfix">
-                        <div class="profile_info">
-                            <span>Welcome</span>
-                        </div>
-                    </div>
-                    <!-- /menu profile quick info -->
-
                     <br />
 
                     <!-- sidebar menu -->
@@ -55,7 +46,7 @@
                                 <li><a href="../CreatePermission/CreatePermission"> <img src="~/Iconos/Permission.png" /> Permission </a></li>
                                 <li><a href="../CreateRole/CreateRole"> <img src="~/Iconos/Role.png" /> Role </a> </li>
                                 <li><a href="../CreateRolePermission/CreateRolePermission"> <img src="~/Iconos/Role Permission.png" />  Role Permission </a></li>
-                                <li><a href="../CreateNote/CreateNote"> <img src="~/Iconos/Nota.png" />  Nota </a></li>
+                                <li><a href="../CreateNote/CreateNote"> <img src="~/Iconos/Nota.png" />  Note </a></li>
                                 <li>
                                     <a> <img src="~/Iconos/Reports and Others.png"> Reports and Others <img src="~/Iconos/Abajo.png"></a>
                                     <ul class="nav child_menu">
@@ -75,18 +66,7 @@
                             </ul>
                         </div>
                     </div>
-
                     <!-- /sidebar menu -->
-                    <!-- /menu footer buttons -->
-                    <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Settings">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                    <!-- /menu footer buttons -->
                 </div>
             </div>
 
@@ -99,65 +79,13 @@
                         </div>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    Username <img src="~/Iconos/User2.png" />
+                                <a data-toggle="tooltip" data-placement="top" title="Logout" href="../Login/Login">
+                                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                    <li><a href="javascript:;"> Profile</a></li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="badge bg-red pull-right">50%</span>
-                                            <span>Settings</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="javascript:;">Help</a></li>
-                                    <li><a href="../Login/Login"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                                </ul>
                             </li>
-                            <li role="presentation" class="dropdown">
-                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                                    <li>
-                                        <a>
-                                            <span>
-                                                <span>Usuario</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span>
-                                                <span>Usuario</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span>
-                                                <span>Usuario</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="text-center">
-                                            <a>
-                                                <strong>See All Alerts</strong>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <li class="">
+                                <br />
+                                @ViewBag.username <img src="~/Iconos/User2.png" />
                             </li>
                         </ul>
                     </nav>
@@ -165,6 +93,10 @@
             </div>
             <!-- /top navigation -->
             <!-- page content -->
+            @using (Html.BeginForm("Submit", "CreateNote", FormMethod.Post))
+            {
+
+
             <div class="right_col" role="main">
                 <div class="">
                     <div class="page-title">
@@ -180,71 +112,74 @@
                             <div class="x_panel">
                                 <ul class="nav navbar-right panel_toolbox"></ul>
 
-                                <form class="form-horizontal form-label-left" novalidate>
+                                
+                                <div class="form-horizontal form-label-left" novalidate>
 
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
-                                            ID User <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="Id_User" name="Id_User" required="required" class="form-control col-md-7 col-xs-12" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
-                                        </div>
-                                    </div>
-
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_User">
-                                            Title <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="Title" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="Title" required="required" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Date">
-                                            Date <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="date" id="Date" name="Date" size="20" required="required" class="form-control col-md-7 col-xs-12">
-                                        </div>
-                                    </div>
-
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Note_Content">
-                                            Content Note <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <textarea id="Note_Content" required="required" name="Note_Content" class="form-control col-md-7 col-xs-12" rows="7" cols="200" placeholder="Attach the note"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Area">
-                                            State Area <span class="required">*</span>
-                                        </label>
-                                        <div class="onoffswitch">
-                                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                                            <label class="onoffswitch-label" for="myonoffswitch">
-                                                <span class="onoffswitch-inner"></span>
-                                                <span class="onoffswitch-switch"></span>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
+                                                ID Note <span class="required">*</span>
                                             </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" id="Id_Note" name="pId_Note" required="required" class="form-control col-md-7 col-xs-12" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="ln_solid"></div>
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <button type="submit" class="btn btn-primary">Cancel</button>
-                                            <button id="send" type="submit" class="btn btn-success">Submit</button>
-                                            <button id="Modify" type="button" class="btn btn-success">Modify</button>
-                                            <button id="Consult" type="button" class="btn btn-success">Consult</button>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_User">
+                                                Title <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="Title" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="pNote_Title" required="required" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Date">
+                                                Date <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="date" id="Date" name="pNote_Date" size="20" required="required" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Note_Content">
+                                                Content Note <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <textarea id="Note_Content" required="required" name="pNote_Content" class="form-control col-md-7 col-xs-12" rows="7" cols="200" placeholder="Attach the note"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Area">
+                                                State <span class="required">*</span>
+                                            </label>
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                                                <label class="onoffswitch-label" for="myonoffswitch">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        @ViewBag.Msg
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <input type="submit" class="btn btn-primary" formaction="Cancel" value="Cancel" />
+                                                <input type="submit" class="btn btn-success" formaction="Submit" value="Submit" />
+                                                <input type="submit" class="btn btn-success" formaction="Modify" value="Modify" />
+                                                <input type="submit" class="btn btn-success" formaction="Consult" value="Consult" />
+                                            </div>
                                         </div>
                                     </div>
-                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            }
+            <!-- /page content -->
         </div>
     </div>
 

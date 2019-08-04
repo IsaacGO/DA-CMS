@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -110,6 +111,7 @@
     <Content Include="Iconos\Area.png" />
     <Content Include="Iconos\Department.png" />
     <Content Include="Iconos\Menu.png" />
+    <Content Include="Iconos\Newspaper.jpg" />
     <Content Include="Iconos\Nota.png" />
     <Content Include="Iconos\Note Diagram.png" />
     <Content Include="Iconos\Note Style Corretion.png" />
@@ -170,7 +172,6 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\CreateDepartment\CreateDepartment.cshtml" />
     <Content Include="Views\CreateArea\CreateArea.cshtml" />
@@ -180,12 +181,12 @@
     <Content Include="Views\CreateRolePermission\CreateRolePermission.cshtml" />
     <Content Include="Views\UploadNoteDiagram\UploadNoteDiagram.cshtml" />
     <Content Include="Views\UploadNoteStyleCorrection\UploadNoteStyleCorrection.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\MonthlyReport\MonthlyReport.cshtml" />
     <Content Include="Views\WeeklyReport\WeeklyReport.cshtml" />
     <Content Include="Views\Graphs\Graphs.cshtml" />
     <Content Include="Views\Indicators\Indicators.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
