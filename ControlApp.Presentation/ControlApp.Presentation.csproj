@@ -155,7 +155,6 @@
     <Compile Include="Controllers\IndicatorsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MonthlyReportController.cs" />
-    <Compile Include="Controllers\UnEjemploController.cs" />
     <Compile Include="Controllers\UploadNoteDiagramController.cs" />
     <Compile Include="Controllers\UploadNoteStyleCorrectionController.cs" />
     <Compile Include="Controllers\WeeklyReportController.cs" />

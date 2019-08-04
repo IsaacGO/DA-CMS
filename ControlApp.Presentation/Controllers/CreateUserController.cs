@@ -11,6 +11,7 @@ namespace ControlApp.Presentation.Controllers
         // GET: CreateUser
         public ActionResult CreateUser()
         {
+            ViewBag.username = Session["username"];
             return View();
         }
     }
