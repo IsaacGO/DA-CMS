@@ -23,11 +23,22 @@ namespace ControlApp.Presentation.Controllers
             {
                 foreach (var obj in list)
                 {
-                    if (obj.User_nickname.Equals(Username) && obj.User_pass.Equals(Password)) { return RedirectToAction("Index"); }
+                    if (obj.User_nickname.Equals(Username) && obj.User_pass.Equals(Password))
+                    {
+                        Session["username"] = Username;
+                        Session["idUser"] = obj.ID_User;
+       
+                        return RedirectToAction("Index");
+                    }
+
                 }
             }
+
             return RedirectToAction("Login");
         }
         public ActionResult Index() { return View(); }
+
+        
     }
+
 }

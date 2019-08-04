@@ -25,7 +25,7 @@ namespace ControlApp.DataAccess.Crud
         public override bool Create(BaseEntity entity)
         {
             var ObjNote = (Note)entity;
-            Context.SP_CRUD_NOTE((int)CrudActionEnum.Create, ObjNote.CreateBy, ObjNote.ID_Note, ObjNote.Note_Title,ObjNote.Note_Date
+            Context.SP_CRUD_NOTE((int)CrudActionEnum.Create, ObjNote.CreateBy, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
                 ,ObjNote.Note_Content);
             return true;
         }

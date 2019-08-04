@@ -29,13 +29,6 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="clearfix"></div>
-                    <!-- menu profile quick info -->
-                    <div class="profile clearfix">
-                        <div class="profile_info">
-                            <span>Welcome</span>
-                        </div>
-                    </div>
-                    <!-- /menu profile quick info -->
                     <br />
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -49,7 +42,7 @@
                                 <li><a href="../CreatePermission/CreatePermission"> <img src="~/Iconos/Permission.png" /> Permission </a></li>
                                 <li><a href="../CreateRole/CreateRole"> <img src="~/Iconos/Role.png" /> Role </a> </li>
                                 <li><a href="../CreateRolePermission/CreateRolePermission"> <img src="~/Iconos/Role Permission.png" />  Role Permission </a></li>
-                                <li><a href="../CreateNote/CreateNote"> <img src="~/Iconos/Nota.png" />  Nota </a></li>
+                                <li><a href="../CreateNote/CreateNote"> <img src="~/Iconos/Nota.png" />  Note </a></li>
                                 <li>
                                     <a> <img src="~/Iconos/Reports and Others.png"> Reports and Others <img src="~/Iconos/Abajo.png"></a>
                                     <ul class="nav child_menu">
@@ -60,8 +53,8 @@
                                                 <li><a href="../MonthlyReport/MonthlyReport">Monthly Reports</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href=""> Graphs </a></li>
-                                        <li><a href=""> Indicators </a></li>
+                                        <li><a href="../Graphs/Graphs"> Graphs </a></li>
+                                        <li><a href="../Indicators/Indicators"> Indicators </a></li>
                                     </ul>
                                 </li>
                                 <li><a href="../UploadNoteStyleCorrection/UploadNoteStyleCorrection"> <img src="~/Iconos/Note Style Corretion.png" /> Note Style Correction </a></li>
@@ -69,18 +62,7 @@
                             </ul>
                         </div>
                     </div>
-
                     <!-- /sidebar menu -->
-                    <!-- /menu footer buttons -->
-                    <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Settings">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                    <!-- /menu footer buttons -->
                 </div>
             </div>
 
@@ -91,79 +73,15 @@
                         <div class="nav toggle">
                             <a id="menu_toggle"> <img src="~/Iconos/Menu.png" /> </a>
                         </div>
-
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    Username <img src="~/Iconos/User2.png" />
+                                <a data-toggle="tooltip" data-placement="top" title="Logout" href="../Login/Login">
+                                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                    <li><a href="javascript:;"> Profile</a></li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="badge bg-red pull-right">50%</span>
-                                            <span>Settings</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="javascript:;">Help</a></li>
-                                    <li><a href="../Login/Login"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                                </ul>
                             </li>
-                            <li role="presentation" class="dropdown">
-                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                                    <li>
-                                        <a>
-                                            <span>
-                                                <span>Usuario</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span>
-                                                <span>Usuario</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span>
-                                                <span>Usuario</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span>
-                                                <span>Usuario</span>
-                                                <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="text-center">
-                                            <a>
-                                                <strong>See All Alerts</strong>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <li class="">
+                                <br />
+                                Username <img src="~/Iconos/User2.png" />
                             </li>
                         </ul>
                     </nav>
@@ -264,8 +182,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-md-offset-3">
-                                        <button type="submit" class="btn btn-primary" onclick="window.print ()">Imprimir</button>
-                                        <button id="Guardar" type="button" class="btn btn-success">Guardar</button>
+                                        <button type="submit" class="btn btn-primary" onclick="window.print ()">Print</button>
+                                        <button id="Guardar" type="button" class="btn btn-success">Save</button>
                                     </div>
                                     <div class="ln_solid"></div>
                                 </form>
@@ -274,6 +192,7 @@
                     </div>
                 </div>
             </div>
+            <!-- /page content -->
         </div>
     </div>
         <!-- jQuery -->
