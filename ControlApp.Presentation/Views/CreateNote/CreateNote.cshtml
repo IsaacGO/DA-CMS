@@ -1,4 +1,5 @@
-﻿
+﻿@model ControlApp.Entities.Objects.Note
+
 @{
     ViewBag.Title = "CreateNote";
 }
@@ -115,21 +116,23 @@
                                 
                                 <div class="form-horizontal form-label-left" novalidate>
 
-                                        <div class="item form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
-                                                ID Note <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="text" id="Id_Note" name="pId_Note" required="required" class="form-control col-md-7 col-xs-12" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
-                                            </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Id_User">
+                                            ID Note <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            @*<input type="text" id="Id_Note" name="pId_Note" required="required" class="form-control col-md-7 col-xs-12" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />*@
+                                            @Html.TextBoxFor(x => x.ID_Note, new { @class = "form-control col-md-7 col-xs-12", required = "required", name = "pId_Note", id = "Id_Note" })
                                         </div>
+                                    </div>
 
                                         <div class="item form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_User">
                                                 Title <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="Title" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="pNote_Title" required="required" type="text">
+                                                @*<input id="Title" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="pNote_Title" required="required" type="text">*@
+                                                @Html.TextBoxFor(x => x.Note_Title, new { @class = "form-control col-md-7 col-xs-12", name = "pNote_Title" })
                                             </div>
                                         </div>
                                         <div class="item form-group">
@@ -137,7 +140,9 @@
                                                 Date <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input type="date" id="Date" name="pNote_Date" size="20" required="required" class="form-control col-md-7 col-xs-12">
+                                                @*<input type="date" id="Date" name="pNote_Date" size="20" required="required" class="form-control col-md-7 col-xs-12">*@
+                                                @*@Html.TextBoxFor(x => x.Note_Date, new { @class = "form-control col-md-7 col-xs-12", type = "date", name = "pNote_Date" })*@
+                                                @Html.TextBoxFor(x => x.Note_Date, new { @class = "form-control col-md-7 col-xs-12", name = "pNote_Date" })
                                             </div>
                                         </div>
 
@@ -146,7 +151,8 @@
                                                 Content Note <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <textarea id="Note_Content" required="required" name="pNote_Content" class="form-control col-md-7 col-xs-12" rows="7" cols="200" placeholder="Attach the note"></textarea>
+                                                @*<textarea id="Note_Content" required="required" name="pNote_Content" class="form-control col-md-7 col-xs-12" rows="7" cols="200" placeholder="Attach the note"></textarea>*@
+                                                @Html.TextAreaFor(x => x.Note_Content, new { @class = "form-control col-md-7 col-xs-12", name = "pNote_Content" })
                                             </div>
                                         </div>
 
@@ -155,11 +161,13 @@
                                                 State <span class="required">*</span>
                                             </label>
                                             <div class="onoffswitch">
-                                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                                                @*<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>*@
+                                                @Html.TextBoxFor(x => x.State, new { @class = "onoffswitch-checkbox", type="checkbox", id = "myonoffswitch"})
                                                 <label class="onoffswitch-label" for="myonoffswitch">
                                                     <span class="onoffswitch-inner"></span>
                                                     <span class="onoffswitch-switch"></span>
                                                 </label>
+
                                             </div>
                                         </div>
                                         @ViewBag.Msg

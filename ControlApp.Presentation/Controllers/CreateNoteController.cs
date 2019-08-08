@@ -16,50 +16,45 @@ namespace ControlApp.Presentation.Controllers
         public ActionResult CreateNote()
         {
             ViewBag.username = Session["username"];
-            return View();
+            Note ObjNote = new Note();
+            ObjNote.Note_Date = Convert.ToDateTime(DateTime.Now);
+            return View(ObjNote);
         }
         [HttpPost]
         public ActionResult Cancel() { return View("CreateNote"); }
 
         [HttpPost]
-        public ActionResult Submit(string pNote_Title, DateTime pNote_Date, string pNote_Content)
+        public ActionResult Submit([Bind(Include = "Id_Note, Note_Title, Note_Content, Note_Date, State")] Note pNote)
         {
             Note ObjNote = new Note();
+            ObjNote = pNote;
+            ObjNote.Note_Date = Convert.ToDateTime(DateTime.Now);
             ObjNote.CreateBy = (string)Session["username"];
-            ObjNote.Note_Title = pNote_Title;
-            ObjNote.Note_Date = pNote_Date;
-            ObjNote.Note_Content = pNote_Content;
             mNote.Create(ObjNote);
-            ViewBag.Msg = "Note created!!!";
+            //ViewBag.Msg = "Created Note";
             return View("CreateNote");
         }
 
         [HttpPost]
-        public ActionResult Modify()
+        public ActionResult Modify([Bind(Include = "Id_Note, Note_Title, Note_Content, Note_Date, State")] Note pNote)
         {
-            ViewBag.Msg = "Funciona Submit!!!";
-            return View("CreateNote");
+            Note ObjNote = new Note();
+            ObjNote = pNote;
+            ObjNote.UpdateBy = (string)Session["username"];
+            mNote.Update(ObjNote);
+            //ViewBag.Msg = "Modified Note";
+            return RedirectToAction("ShowView", ObjNote);
         }
 
         [HttpPost]
-        public ActionResult Consult()
+        public ActionResult Consult([Bind(Include = "Id_Note, Note_Title, Note_Content, Note_Date, State")] Note pNote)
         {
-            ViewBag.Msg = "Isaac";
-            return View("CreateNote");
+            Note n = new Note { ID_Note = Convert.ToInt32(pNote.ID_Note) };
+            var lst = mNote.RetrieveAllById<Note>(n);
+            return RedirectToAction("ShowView", lst[0]);
         }
 
-
-        //[HttpPost]
-        //public ActionResult CreateNote(string cancel, string submit)
-        //{
-        //    if (cancel != null)
-        //        return RedirectToAction("Login");
-        //    if (submit != null)
-        //        return RedirectToAction("CreateNote");
-
-
-        //    return null;
-        //}
+        public ActionResult ShowView(Note Obj) { return View("CreateNote", Obj); }
 
     }
 }
