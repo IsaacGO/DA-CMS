@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +12,12 @@ namespace ControlApp.Entities.Objects
     {
         public int ID_Note { get; set; }
         public string Note_Title { get; set; }
+        //[DataType(DataType.DateTime)]
+        //[DisplayName("Note_Date")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Note_Date { get; set; }
         public string Note_Content { get; set; }
+
         public Note()
         {
             ID_Note = 0;

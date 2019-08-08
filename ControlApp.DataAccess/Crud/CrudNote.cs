@@ -127,6 +127,7 @@ namespace ControlApp.DataAccess.Crud
         public override List<T> RetrieveById<T>(BaseEntity entity)
         {
             var ObjNote = new Note();
+            ObjNote = (Note)entity;
             var lst = new List<T>();
             List<Note> MyList = new List<Note>();
             var Query = Context.SP_CRUD_NOTE((int)CrudActionEnum.RetrieveAll, ObjNote.IdSession, ObjNote.ID_Note, ObjNote.Note_Title, ObjNote.Note_Date
