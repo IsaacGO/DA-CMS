@@ -24,13 +24,15 @@ namespace ControlApp.Entities.Objects
             Note_Title = "N/A";
             Note_Date = DateTime.Today;
             Note_Content = "N/A";
+            State = true;
         }
-        public Note(int pID_Note, string p_Note_Title, DateTime pNote_Date, string pNote_Content)
+        public Note(int pID_Note, string p_Note_Title, DateTime pNote_Date, string pNote_Content, bool pState)
         {
             this.ID_Note = pID_Note;
             this.Note_Title = p_Note_Title;
             this.Note_Date = pNote_Date;
             this.Note_Content = pNote_Content;
+            this.State = pState;
         }
         public Note(int pID_Note, string p_Note_Title, DateTime pNote_Date, string pNote_Content, bool pState, string pCreateBy,
             DateTime pCreateDate, string pUpdateBy, DateTime? pUpdateDate)

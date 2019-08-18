@@ -20,9 +20,9 @@ namespace ControlApp.DataAccess {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ControlAppDevDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ControlAppDevDataSetIsaac")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ControlAppDevDataSet : global::System.Data.DataSet {
+    public partial class ControlAppDevDataSetIsaac : global::System.Data.DataSet {
         
         private LogDataTable tableLog;
         
@@ -33,6 +33,8 @@ namespace ControlApp.DataAccess {
         private TBL_CXCDataTable tableTBL_CXC;
         
         private TBL_DPTDataTable tableTBL_DPT;
+        
+        private TBL_NOTEDataTable tableTBL_NOTE;
         
         private TBL_ORDERDataTable tableTBL_ORDER;
         
@@ -138,7 +140,7 @@ namespace ControlApp.DataAccess {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ControlAppDevDataSet() {
+        public ControlAppDevDataSetIsaac() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -149,7 +151,7 @@ namespace ControlApp.DataAccess {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected ControlAppDevDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ControlAppDevDataSetIsaac(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -176,6 +178,9 @@ namespace ControlApp.DataAccess {
                 }
                 if ((ds.Tables["TBL_DPT"] != null)) {
                     base.Tables.Add(new TBL_DPTDataTable(ds.Tables["TBL_DPT"]));
+                }
+                if ((ds.Tables["TBL_NOTE"] != null)) {
+                    base.Tables.Add(new TBL_NOTEDataTable(ds.Tables["TBL_NOTE"]));
                 }
                 if ((ds.Tables["TBL_ORDER"] != null)) {
                     base.Tables.Add(new TBL_ORDERDataTable(ds.Tables["TBL_ORDER"]));
@@ -320,6 +325,16 @@ namespace ControlApp.DataAccess {
         public TBL_DPTDataTable TBL_DPT {
             get {
                 return this.tableTBL_DPT;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TBL_NOTEDataTable TBL_NOTE {
+            get {
+                return this.tableTBL_NOTE;
             }
         }
         
@@ -625,7 +640,7 @@ namespace ControlApp.DataAccess {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ControlAppDevDataSet cln = ((ControlAppDevDataSet)(base.Clone()));
+            ControlAppDevDataSetIsaac cln = ((ControlAppDevDataSetIsaac)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -664,6 +679,9 @@ namespace ControlApp.DataAccess {
                 }
                 if ((ds.Tables["TBL_DPT"] != null)) {
                     base.Tables.Add(new TBL_DPTDataTable(ds.Tables["TBL_DPT"]));
+                }
+                if ((ds.Tables["TBL_NOTE"] != null)) {
+                    base.Tables.Add(new TBL_NOTEDataTable(ds.Tables["TBL_NOTE"]));
                 }
                 if ((ds.Tables["TBL_ORDER"] != null)) {
                     base.Tables.Add(new TBL_ORDERDataTable(ds.Tables["TBL_ORDER"]));
@@ -804,6 +822,12 @@ namespace ControlApp.DataAccess {
             if ((initTable == true)) {
                 if ((this.tableTBL_DPT != null)) {
                     this.tableTBL_DPT.InitVars();
+                }
+            }
+            this.tableTBL_NOTE = ((TBL_NOTEDataTable)(base.Tables["TBL_NOTE"]));
+            if ((initTable == true)) {
+                if ((this.tableTBL_NOTE != null)) {
+                    this.tableTBL_NOTE.InitVars();
                 }
             }
             this.tableTBL_ORDER = ((TBL_ORDERDataTable)(base.Tables["TBL_ORDER"]));
@@ -991,9 +1015,9 @@ namespace ControlApp.DataAccess {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ControlAppDevDataSet";
+            this.DataSetName = "ControlAppDevDataSetIsaac";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ControlAppDevDataSet.xsd";
+            this.Namespace = "http://tempuri.org/ControlAppDevDataSetIsaac.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableLog = new LogDataTable();
@@ -1006,6 +1030,8 @@ namespace ControlApp.DataAccess {
             base.Tables.Add(this.tableTBL_CXC);
             this.tableTBL_DPT = new TBL_DPTDataTable();
             base.Tables.Add(this.tableTBL_DPT);
+            this.tableTBL_NOTE = new TBL_NOTEDataTable();
+            base.Tables.Add(this.tableTBL_NOTE);
             this.tableTBL_ORDER = new TBL_ORDERDataTable();
             base.Tables.Add(this.tableTBL_ORDER);
             this.tableTBL_PERMISSION = new TBL_PERMISSIONDataTable();
@@ -1188,6 +1214,12 @@ namespace ControlApp.DataAccess {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeTBL_NOTE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeTBL_ORDER() {
             return false;
         }
@@ -1353,7 +1385,7 @@ namespace ControlApp.DataAccess {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ControlAppDevDataSet ds = new ControlAppDevDataSet();
+            ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1411,6 +1443,9 @@ namespace ControlApp.DataAccess {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void TBL_DPTRowChangeEventHandler(object sender, TBL_DPTRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void TBL_NOTERowChangeEventHandler(object sender, TBL_NOTERowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void TBL_ORDERRowChangeEventHandler(object sender, TBL_ORDERRowChangeEvent e);
@@ -1777,7 +1812,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2147,7 +2182,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2500,7 +2535,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2947,7 +2982,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3299,7 +3334,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3318,6 +3353,380 @@ namespace ControlApp.DataAccess {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "TBL_DPTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TBL_NOTEDataTable : global::System.Data.TypedTableBase<TBL_NOTERow> {
+            
+            private global::System.Data.DataColumn columnID_NOTE;
+            
+            private global::System.Data.DataColumn columnNOTE_TITLE;
+            
+            private global::System.Data.DataColumn columnNOTE_DATE;
+            
+            private global::System.Data.DataColumn columnNOTE_CONTENT;
+            
+            private global::System.Data.DataColumn columnNOTE_CREATEBY;
+            
+            private global::System.Data.DataColumn columnNOTE_UPDATEBY;
+            
+            private global::System.Data.DataColumn columnNOTE_CREATEDATE;
+            
+            private global::System.Data.DataColumn columnNOTE_UPDATEDATE;
+            
+            private global::System.Data.DataColumn columnNOTE_STATE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TBL_NOTEDataTable() {
+                this.TableName = "TBL_NOTE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal TBL_NOTEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected TBL_NOTEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ID_NOTEColumn {
+                get {
+                    return this.columnID_NOTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTE_TITLEColumn {
+                get {
+                    return this.columnNOTE_TITLE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTE_DATEColumn {
+                get {
+                    return this.columnNOTE_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTE_CONTENTColumn {
+                get {
+                    return this.columnNOTE_CONTENT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTE_CREATEBYColumn {
+                get {
+                    return this.columnNOTE_CREATEBY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTE_UPDATEBYColumn {
+                get {
+                    return this.columnNOTE_UPDATEBY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTE_CREATEDATEColumn {
+                get {
+                    return this.columnNOTE_CREATEDATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTE_UPDATEDATEColumn {
+                get {
+                    return this.columnNOTE_UPDATEDATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTE_STATEColumn {
+                get {
+                    return this.columnNOTE_STATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TBL_NOTERow this[int index] {
+                get {
+                    return ((TBL_NOTERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TBL_NOTERowChangeEventHandler TBL_NOTERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TBL_NOTERowChangeEventHandler TBL_NOTERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TBL_NOTERowChangeEventHandler TBL_NOTERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TBL_NOTERowChangeEventHandler TBL_NOTERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddTBL_NOTERow(TBL_NOTERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TBL_NOTERow AddTBL_NOTERow(string NOTE_TITLE, System.DateTime NOTE_DATE, string NOTE_CONTENT, string NOTE_CREATEBY, string NOTE_UPDATEBY, System.DateTime NOTE_CREATEDATE, System.DateTime NOTE_UPDATEDATE, bool NOTE_STATE) {
+                TBL_NOTERow rowTBL_NOTERow = ((TBL_NOTERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        NOTE_TITLE,
+                        NOTE_DATE,
+                        NOTE_CONTENT,
+                        NOTE_CREATEBY,
+                        NOTE_UPDATEBY,
+                        NOTE_CREATEDATE,
+                        NOTE_UPDATEDATE,
+                        NOTE_STATE};
+                rowTBL_NOTERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTBL_NOTERow);
+                return rowTBL_NOTERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TBL_NOTEDataTable cln = ((TBL_NOTEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TBL_NOTEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID_NOTE = base.Columns["ID_NOTE"];
+                this.columnNOTE_TITLE = base.Columns["NOTE_TITLE"];
+                this.columnNOTE_DATE = base.Columns["NOTE_DATE"];
+                this.columnNOTE_CONTENT = base.Columns["NOTE_CONTENT"];
+                this.columnNOTE_CREATEBY = base.Columns["NOTE_CREATEBY"];
+                this.columnNOTE_UPDATEBY = base.Columns["NOTE_UPDATEBY"];
+                this.columnNOTE_CREATEDATE = base.Columns["NOTE_CREATEDATE"];
+                this.columnNOTE_UPDATEDATE = base.Columns["NOTE_UPDATEDATE"];
+                this.columnNOTE_STATE = base.Columns["NOTE_STATE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID_NOTE = new global::System.Data.DataColumn("ID_NOTE", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_NOTE);
+                this.columnNOTE_TITLE = new global::System.Data.DataColumn("NOTE_TITLE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTE_TITLE);
+                this.columnNOTE_DATE = new global::System.Data.DataColumn("NOTE_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTE_DATE);
+                this.columnNOTE_CONTENT = new global::System.Data.DataColumn("NOTE_CONTENT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTE_CONTENT);
+                this.columnNOTE_CREATEBY = new global::System.Data.DataColumn("NOTE_CREATEBY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTE_CREATEBY);
+                this.columnNOTE_UPDATEBY = new global::System.Data.DataColumn("NOTE_UPDATEBY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTE_UPDATEBY);
+                this.columnNOTE_CREATEDATE = new global::System.Data.DataColumn("NOTE_CREATEDATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTE_CREATEDATE);
+                this.columnNOTE_UPDATEDATE = new global::System.Data.DataColumn("NOTE_UPDATEDATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTE_UPDATEDATE);
+                this.columnNOTE_STATE = new global::System.Data.DataColumn("NOTE_STATE", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTE_STATE);
+                this.columnID_NOTE.AutoIncrement = true;
+                this.columnID_NOTE.AutoIncrementSeed = -1;
+                this.columnID_NOTE.AutoIncrementStep = -1;
+                this.columnID_NOTE.AllowDBNull = false;
+                this.columnID_NOTE.ReadOnly = true;
+                this.columnNOTE_TITLE.AllowDBNull = false;
+                this.columnNOTE_TITLE.MaxLength = 100;
+                this.columnNOTE_DATE.AllowDBNull = false;
+                this.columnNOTE_CONTENT.AllowDBNull = false;
+                this.columnNOTE_CONTENT.MaxLength = 1000;
+                this.columnNOTE_CREATEBY.AllowDBNull = false;
+                this.columnNOTE_CREATEBY.MaxLength = 50;
+                this.columnNOTE_UPDATEBY.MaxLength = 50;
+                this.columnNOTE_CREATEDATE.AllowDBNull = false;
+                this.columnNOTE_STATE.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TBL_NOTERow NewTBL_NOTERow() {
+                return ((TBL_NOTERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TBL_NOTERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TBL_NOTERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TBL_NOTERowChanged != null)) {
+                    this.TBL_NOTERowChanged(this, new TBL_NOTERowChangeEvent(((TBL_NOTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TBL_NOTERowChanging != null)) {
+                    this.TBL_NOTERowChanging(this, new TBL_NOTERowChangeEvent(((TBL_NOTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TBL_NOTERowDeleted != null)) {
+                    this.TBL_NOTERowDeleted(this, new TBL_NOTERowChangeEvent(((TBL_NOTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TBL_NOTERowDeleting != null)) {
+                    this.TBL_NOTERowDeleting(this, new TBL_NOTERowChangeEvent(((TBL_NOTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveTBL_NOTERow(TBL_NOTERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TBL_NOTEDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3703,7 +4112,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4086,7 +4495,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4457,7 +4866,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4909,7 +5318,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5280,7 +5689,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5761,7 +6170,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6130,7 +6539,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6476,7 +6885,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6849,7 +7258,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7281,7 +7690,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7751,7 +8160,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8119,7 +8528,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8470,7 +8879,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8895,7 +9304,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -9247,7 +9656,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -9643,7 +10052,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10024,7 +10433,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10392,7 +10801,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10835,7 +11244,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -11202,7 +11611,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -11660,7 +12069,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -12028,7 +12437,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -12369,7 +12778,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -12794,7 +13203,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -13256,7 +13665,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -13628,7 +14037,7 @@ namespace ControlApp.DataAccess {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ControlAppDevDataSet ds = new ControlAppDevDataSet();
+                ControlAppDevDataSetIsaac ds = new ControlAppDevDataSetIsaac();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -14552,6 +14961,154 @@ namespace ControlApp.DataAccess {
                 else {
                     return ((TBL_USERRow[])(base.GetChildRows(this.Table.ChildRelations["FK_TBL_USER_TBL_DPT"])));
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TBL_NOTERow : global::System.Data.DataRow {
+            
+            private TBL_NOTEDataTable tableTBL_NOTE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal TBL_NOTERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTBL_NOTE = ((TBL_NOTEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ID_NOTE {
+                get {
+                    return ((int)(this[this.tableTBL_NOTE.ID_NOTEColumn]));
+                }
+                set {
+                    this[this.tableTBL_NOTE.ID_NOTEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTE_TITLE {
+                get {
+                    return ((string)(this[this.tableTBL_NOTE.NOTE_TITLEColumn]));
+                }
+                set {
+                    this[this.tableTBL_NOTE.NOTE_TITLEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime NOTE_DATE {
+                get {
+                    return ((global::System.DateTime)(this[this.tableTBL_NOTE.NOTE_DATEColumn]));
+                }
+                set {
+                    this[this.tableTBL_NOTE.NOTE_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTE_CONTENT {
+                get {
+                    return ((string)(this[this.tableTBL_NOTE.NOTE_CONTENTColumn]));
+                }
+                set {
+                    this[this.tableTBL_NOTE.NOTE_CONTENTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTE_CREATEBY {
+                get {
+                    return ((string)(this[this.tableTBL_NOTE.NOTE_CREATEBYColumn]));
+                }
+                set {
+                    this[this.tableTBL_NOTE.NOTE_CREATEBYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTE_UPDATEBY {
+                get {
+                    try {
+                        return ((string)(this[this.tableTBL_NOTE.NOTE_UPDATEBYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTE_UPDATEBY\' in table \'TBL_NOTE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBL_NOTE.NOTE_UPDATEBYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime NOTE_CREATEDATE {
+                get {
+                    return ((global::System.DateTime)(this[this.tableTBL_NOTE.NOTE_CREATEDATEColumn]));
+                }
+                set {
+                    this[this.tableTBL_NOTE.NOTE_CREATEDATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime NOTE_UPDATEDATE {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTBL_NOTE.NOTE_UPDATEDATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTE_UPDATEDATE\' in table \'TBL_NOTE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBL_NOTE.NOTE_UPDATEDATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool NOTE_STATE {
+                get {
+                    return ((bool)(this[this.tableTBL_NOTE.NOTE_STATEColumn]));
+                }
+                set {
+                    this[this.tableTBL_NOTE.NOTE_STATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTE_UPDATEBYNull() {
+                return this.IsNull(this.tableTBL_NOTE.NOTE_UPDATEBYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTE_UPDATEBYNull() {
+                this[this.tableTBL_NOTE.NOTE_UPDATEBYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTE_UPDATEDATENull() {
+                return this.IsNull(this.tableTBL_NOTE.NOTE_UPDATEDATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTE_UPDATEDATENull() {
+                this[this.tableTBL_NOTE.NOTE_UPDATEDATEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19193,6 +19750,40 @@ namespace ControlApp.DataAccess {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class TBL_NOTERowChangeEvent : global::System.EventArgs {
+            
+            private TBL_NOTERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TBL_NOTERowChangeEvent(TBL_NOTERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TBL_NOTERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public class TBL_ORDERRowChangeEvent : global::System.EventArgs {
             
             private TBL_ORDERRow eventRow;
@@ -20074,7 +20665,7 @@ namespace ControlApp.DataAccess {
         }
     }
 }
-namespace ControlApp.DataAccess.ControlAppDevDataSetTableAdapters {
+namespace ControlApp.DataAccess.ControlAppDevDataSetIsaacTableAdapters {
     
     
     /// <summary>
@@ -20223,7 +20814,7 @@ namespace ControlApp.DataAccess.ControlAppDevDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20240,7 +20831,7 @@ namespace ControlApp.DataAccess.ControlAppDevDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.LogDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.LogDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20253,9 +20844,9 @@ namespace ControlApp.DataAccess.ControlAppDevDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.LogDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.LogDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.LogDataTable dataTable = new ControlAppDevDataSet.LogDataTable();
+            ControlAppDevDataSetIsaac.LogDataTable dataTable = new ControlAppDevDataSetIsaac.LogDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -20263,14 +20854,14 @@ namespace ControlApp.DataAccess.ControlAppDevDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.LogDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.LogDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "Log");
         }
         
@@ -20529,7 +21120,7 @@ SELECT ID_AREA, ID_DPT, AREA_NAME, AREA_STATE, AREA_CREATEBY, AREA_UPDATEDBY, AR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20547,7 +21138,7 @@ SELECT ID_AREA, ID_DPT, AREA_NAME, AREA_STATE, AREA_CREATEBY, AREA_UPDATEDBY, AR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_AREADataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_AREADataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20560,9 +21151,9 @@ SELECT ID_AREA, ID_DPT, AREA_NAME, AREA_STATE, AREA_CREATEBY, AREA_UPDATEDBY, AR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_AREADataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_AREADataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_AREADataTable dataTable = new ControlAppDevDataSet.TBL_AREADataTable();
+            ControlAppDevDataSetIsaac.TBL_AREADataTable dataTable = new ControlAppDevDataSetIsaac.TBL_AREADataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -20570,14 +21161,14 @@ SELECT ID_AREA, ID_DPT, AREA_NAME, AREA_STATE, AREA_CREATEBY, AREA_UPDATEDBY, AR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_AREADataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_AREADataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_AREA");
         }
         
@@ -21008,7 +21599,7 @@ SELECT ID_CUSTOMER, CUSTOMER_NAME, CUSTOMER_STATE, CUSTOMER_CREATEBY, CUSTOMER_U
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21026,7 +21617,7 @@ SELECT ID_CUSTOMER, CUSTOMER_NAME, CUSTOMER_STATE, CUSTOMER_CREATEBY, CUSTOMER_U
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_CUSTOMERDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_CUSTOMERDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -21039,9 +21630,9 @@ SELECT ID_CUSTOMER, CUSTOMER_NAME, CUSTOMER_STATE, CUSTOMER_CREATEBY, CUSTOMER_U
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_CUSTOMERDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_CUSTOMERDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_CUSTOMERDataTable dataTable = new ControlAppDevDataSet.TBL_CUSTOMERDataTable();
+            ControlAppDevDataSetIsaac.TBL_CUSTOMERDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_CUSTOMERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21049,14 +21640,14 @@ SELECT ID_CUSTOMER, CUSTOMER_NAME, CUSTOMER_STATE, CUSTOMER_CREATEBY, CUSTOMER_U
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_CUSTOMERDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_CUSTOMERDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_CUSTOMER");
         }
         
@@ -21497,7 +22088,7 @@ SELECT ID_CXC, ID_USER, ID_STOCK, DATE_CXC, QUANTITY_RETREAT, QUANTITY_RETURN, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21516,7 +22107,7 @@ SELECT ID_CXC, ID_USER, ID_STOCK, DATE_CXC, QUANTITY_RETREAT, QUANTITY_RETURN, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_CXCDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_CXCDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -21529,9 +22120,9 @@ SELECT ID_CXC, ID_USER, ID_STOCK, DATE_CXC, QUANTITY_RETREAT, QUANTITY_RETURN, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_CXCDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_CXCDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_CXCDataTable dataTable = new ControlAppDevDataSet.TBL_CXCDataTable();
+            ControlAppDevDataSetIsaac.TBL_CXCDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_CXCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21539,14 +22130,14 @@ SELECT ID_CXC, ID_USER, ID_STOCK, DATE_CXC, QUANTITY_RETREAT, QUANTITY_RETURN, T
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_CXCDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_CXCDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_CXC");
         }
         
@@ -22077,7 +22668,7 @@ SELECT ID_DPT, NAME_DPT, STATE_DPT, CREATEBY_DPT, UPDATEBY_DPT, CREATEDATE_DPT, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22095,7 +22686,7 @@ SELECT ID_DPT, NAME_DPT, STATE_DPT, CREATEBY_DPT, UPDATEBY_DPT, CREATEDATE_DPT, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_DPTDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_DPTDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -22108,9 +22699,9 @@ SELECT ID_DPT, NAME_DPT, STATE_DPT, CREATEBY_DPT, UPDATEBY_DPT, CREATEDATE_DPT, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_DPTDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_DPTDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_DPTDataTable dataTable = new ControlAppDevDataSet.TBL_DPTDataTable();
+            ControlAppDevDataSetIsaac.TBL_DPTDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_DPTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -22118,14 +22709,14 @@ SELECT ID_DPT, NAME_DPT, STATE_DPT, CREATEBY_DPT, UPDATEBY_DPT, CREATEDATE_DPT, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_DPTDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_DPTDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_DPT");
         }
         
@@ -22344,6 +22935,277 @@ SELECT ID_DPT, NAME_DPT, STATE_DPT, CREATEBY_DPT, UPDATEBY_DPT, CREATEDATE_DPT, 
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TBL_NOTETableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public TBL_NOTETableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "TBL_NOTE";
+            tableMapping.ColumnMappings.Add("ID_NOTE", "ID_NOTE");
+            tableMapping.ColumnMappings.Add("NOTE_TITLE", "NOTE_TITLE");
+            tableMapping.ColumnMappings.Add("NOTE_DATE", "NOTE_DATE");
+            tableMapping.ColumnMappings.Add("NOTE_CONTENT", "NOTE_CONTENT");
+            tableMapping.ColumnMappings.Add("NOTE_CREATEBY", "NOTE_CREATEBY");
+            tableMapping.ColumnMappings.Add("NOTE_UPDATEBY", "NOTE_UPDATEBY");
+            tableMapping.ColumnMappings.Add("NOTE_CREATEDATE", "NOTE_CREATEDATE");
+            tableMapping.ColumnMappings.Add("NOTE_UPDATEDATE", "NOTE_UPDATEDATE");
+            tableMapping.ColumnMappings.Add("NOTE_STATE", "NOTE_STATE");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TBL_NOTE] ([NOTE_TITLE], [NOTE_DATE], [NOTE_CONTENT], [NOTE_CREATEBY], [NOTE_UPDATEBY], [NOTE_CREATEDATE], [NOTE_UPDATEDATE], [NOTE_STATE]) VALUES (@NOTE_TITLE, @NOTE_DATE, @NOTE_CONTENT, @NOTE_CREATEBY, @NOTE_UPDATEBY, @NOTE_CREATEDATE, @NOTE_UPDATEDATE, @NOTE_STATE)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTE_TITLE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOTE_TITLE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTE_DATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOTE_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTE_CONTENT", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOTE_CONTENT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTE_CREATEBY", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOTE_CREATEBY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTE_UPDATEBY", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOTE_UPDATEBY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTE_CREATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOTE_CREATEDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTE_UPDATEDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOTE_UPDATEDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTE_STATE", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOTE_STATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID_NOTE, NOTE_TITLE, NOTE_DATE, NOTE_CONTENT, NOTE_CREATEBY, NOTE_UPDATEBY" +
+                ", NOTE_CREATEDATE, NOTE_UPDATEDATE, NOTE_STATE FROM dbo.TBL_NOTE";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_NOTEDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ControlAppDevDataSetIsaac.TBL_NOTEDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            ControlAppDevDataSetIsaac.TBL_NOTEDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_NOTEDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_NOTEDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
+            return this.Adapter.Update(dataSet, "TBL_NOTE");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string NOTE_TITLE, System.DateTime NOTE_DATE, string NOTE_CONTENT, string NOTE_CREATEBY, string NOTE_UPDATEBY, System.DateTime NOTE_CREATEDATE, global::System.Nullable<global::System.DateTime> NOTE_UPDATEDATE, bool NOTE_STATE) {
+            if ((NOTE_TITLE == null)) {
+                throw new global::System.ArgumentNullException("NOTE_TITLE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(NOTE_TITLE));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(NOTE_DATE));
+            if ((NOTE_CONTENT == null)) {
+                throw new global::System.ArgumentNullException("NOTE_CONTENT");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(NOTE_CONTENT));
+            }
+            if ((NOTE_CREATEBY == null)) {
+                throw new global::System.ArgumentNullException("NOTE_CREATEBY");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(NOTE_CREATEBY));
+            }
+            if ((NOTE_UPDATEBY == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(NOTE_UPDATEBY));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(NOTE_CREATEDATE));
+            if ((NOTE_UPDATEDATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(NOTE_UPDATEDATE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[7].Value = ((bool)(NOTE_STATE));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class TBL_ORDERTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -22528,7 +23390,7 @@ SELECT ID_ORDER, ID_PREPAID, ORDER_QUANTITY, ORDER_DATE, ORDER_DELIVERY, ORDER_S
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22547,7 +23409,7 @@ SELECT ID_ORDER, ID_PREPAID, ORDER_QUANTITY, ORDER_DATE, ORDER_DELIVERY, ORDER_S
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_ORDERDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_ORDERDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -22560,9 +23422,9 @@ SELECT ID_ORDER, ID_PREPAID, ORDER_QUANTITY, ORDER_DATE, ORDER_DELIVERY, ORDER_S
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_ORDERDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_ORDERDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_ORDERDataTable dataTable = new ControlAppDevDataSet.TBL_ORDERDataTable();
+            ControlAppDevDataSetIsaac.TBL_ORDERDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_ORDERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -22570,14 +23432,14 @@ SELECT ID_ORDER, ID_PREPAID, ORDER_QUANTITY, ORDER_DATE, ORDER_DELIVERY, ORDER_S
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_ORDERDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_ORDERDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_ORDER");
         }
         
@@ -23008,7 +23870,7 @@ SELECT ID_PER, ID_DPT, NAME_PERMISSION, DESCRIP_PERMISSION, PER_STATE, PER_CREAT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23026,7 +23888,7 @@ SELECT ID_PER, ID_DPT, NAME_PERMISSION, DESCRIP_PERMISSION, PER_STATE, PER_CREAT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_PERMISSIONDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_PERMISSIONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -23039,9 +23901,9 @@ SELECT ID_PER, ID_DPT, NAME_PERMISSION, DESCRIP_PERMISSION, PER_STATE, PER_CREAT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_PERMISSIONDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_PERMISSIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_PERMISSIONDataTable dataTable = new ControlAppDevDataSet.TBL_PERMISSIONDataTable();
+            ControlAppDevDataSetIsaac.TBL_PERMISSIONDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_PERMISSIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -23049,14 +23911,14 @@ SELECT ID_PER, ID_DPT, NAME_PERMISSION, DESCRIP_PERMISSION, PER_STATE, PER_CREAT
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_PERMISSIONDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_PERMISSIONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_PERMISSION");
         }
         
@@ -23566,7 +24428,7 @@ SELECT ID_POSITION, ID_AREA, NAME_POSITION, POSITION_STATE, POSITION_CREATEBY, P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23585,7 +24447,7 @@ SELECT ID_POSITION, ID_AREA, NAME_POSITION, POSITION_STATE, POSITION_CREATEBY, P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_POSITIONDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_POSITIONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -23598,9 +24460,9 @@ SELECT ID_POSITION, ID_AREA, NAME_POSITION, POSITION_STATE, POSITION_CREATEBY, P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_POSITIONDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_POSITIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_POSITIONDataTable dataTable = new ControlAppDevDataSet.TBL_POSITIONDataTable();
+            ControlAppDevDataSetIsaac.TBL_POSITIONDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_POSITIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -23608,14 +24470,14 @@ SELECT ID_POSITION, ID_AREA, NAME_POSITION, POSITION_STATE, POSITION_CREATEBY, P
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_POSITIONDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_POSITIONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_POSITION");
         }
         
@@ -24069,7 +24931,7 @@ SELECT ID_PREPAID, ID_CUSTOMER, ID_PRODUCT, PREPAID_QUANTITY, PREPAID_TOTAL, PRE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24088,7 +24950,7 @@ SELECT ID_PREPAID, ID_CUSTOMER, ID_PRODUCT, PREPAID_QUANTITY, PREPAID_TOTAL, PRE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_PREPAIDDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_PREPAIDDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24101,9 +24963,9 @@ SELECT ID_PREPAID, ID_CUSTOMER, ID_PRODUCT, PREPAID_QUANTITY, PREPAID_TOTAL, PRE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_PREPAIDDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_PREPAIDDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_PREPAIDDataTable dataTable = new ControlAppDevDataSet.TBL_PREPAIDDataTable();
+            ControlAppDevDataSetIsaac.TBL_PREPAIDDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_PREPAIDDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24111,14 +24973,14 @@ SELECT ID_PREPAID, ID_CUSTOMER, ID_PRODUCT, PREPAID_QUANTITY, PREPAID_TOTAL, PRE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_PREPAIDDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_PREPAIDDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_PREPAID");
         }
         
@@ -24584,7 +25446,7 @@ SELECT ID_PRODUCT, TOTAL_PRODUCT, DESCRIP_PRICE, PRODUCT_STATE, PRODUCT_CREATEBY
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24602,7 +25464,7 @@ SELECT ID_PRODUCT, TOTAL_PRODUCT, DESCRIP_PRICE, PRODUCT_STATE, PRODUCT_CREATEBY
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_PRODUCTDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_PRODUCTDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24615,9 +25477,9 @@ SELECT ID_PRODUCT, TOTAL_PRODUCT, DESCRIP_PRICE, PRODUCT_STATE, PRODUCT_CREATEBY
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_PRODUCTDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_PRODUCTDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_PRODUCTDataTable dataTable = new ControlAppDevDataSet.TBL_PRODUCTDataTable();
+            ControlAppDevDataSetIsaac.TBL_PRODUCTDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_PRODUCTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24625,14 +25487,14 @@ SELECT ID_PRODUCT, TOTAL_PRODUCT, DESCRIP_PRICE, PRODUCT_STATE, PRODUCT_CREATEBY
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_PRODUCTDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_PRODUCTDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_PRODUCT");
         }
         
@@ -25099,7 +25961,7 @@ SELECT ID_RECEIPT, NAME_CUSTOMER, DATE_RECEIPT, QUANTITY, TOTAL_RECEIPT, ID_PROD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25118,7 +25980,7 @@ SELECT ID_RECEIPT, NAME_CUSTOMER, DATE_RECEIPT, QUANTITY, TOTAL_RECEIPT, ID_PROD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_RECEIPTDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_RECEIPTDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25131,9 +25993,9 @@ SELECT ID_RECEIPT, NAME_CUSTOMER, DATE_RECEIPT, QUANTITY, TOTAL_RECEIPT, ID_PROD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_RECEIPTDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_RECEIPTDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_RECEIPTDataTable dataTable = new ControlAppDevDataSet.TBL_RECEIPTDataTable();
+            ControlAppDevDataSetIsaac.TBL_RECEIPTDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_RECEIPTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25141,14 +26003,14 @@ SELECT ID_RECEIPT, NAME_CUSTOMER, DATE_RECEIPT, QUANTITY, TOTAL_RECEIPT, ID_PROD
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_RECEIPTDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_RECEIPTDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_RECEIPT");
         }
         
@@ -25654,7 +26516,7 @@ SELECT ID_ROLE, NAME_ROLE, DESCRIP_ROLE, ROLE_STATE, ROLE_CREATEBY, ROLE_UPDATED
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25672,7 +26534,7 @@ SELECT ID_ROLE, NAME_ROLE, DESCRIP_ROLE, ROLE_STATE, ROLE_CREATEBY, ROLE_UPDATED
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_ROLEDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_ROLEDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25685,9 +26547,9 @@ SELECT ID_ROLE, NAME_ROLE, DESCRIP_ROLE, ROLE_STATE, ROLE_CREATEBY, ROLE_UPDATED
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_ROLEDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_ROLEDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_ROLEDataTable dataTable = new ControlAppDevDataSet.TBL_ROLEDataTable();
+            ControlAppDevDataSetIsaac.TBL_ROLEDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_ROLEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25695,14 +26557,14 @@ SELECT ID_ROLE, NAME_ROLE, DESCRIP_ROLE, ROLE_STATE, ROLE_CREATEBY, ROLE_UPDATED
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_ROLEDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_ROLEDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_ROLE");
         }
         
@@ -26094,7 +26956,7 @@ SELECT ID_ROLE, NAME_ROLE, DESCRIP_ROLE, ROLE_STATE, ROLE_CREATEBY, ROLE_UPDATED
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26112,7 +26974,7 @@ SELECT ID_ROLE, NAME_ROLE, DESCRIP_ROLE, ROLE_STATE, ROLE_CREATEBY, ROLE_UPDATED
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_ROLE_PERMISSIONDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_ROLE_PERMISSIONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26125,9 +26987,9 @@ SELECT ID_ROLE, NAME_ROLE, DESCRIP_ROLE, ROLE_STATE, ROLE_CREATEBY, ROLE_UPDATED
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_ROLE_PERMISSIONDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_ROLE_PERMISSIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_ROLE_PERMISSIONDataTable dataTable = new ControlAppDevDataSet.TBL_ROLE_PERMISSIONDataTable();
+            ControlAppDevDataSetIsaac.TBL_ROLE_PERMISSIONDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_ROLE_PERMISSIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26135,14 +26997,14 @@ SELECT ID_ROLE, NAME_ROLE, DESCRIP_ROLE, ROLE_STATE, ROLE_CREATEBY, ROLE_UPDATED
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_ROLE_PERMISSIONDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_ROLE_PERMISSIONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_ROLE_PERMISSION");
         }
         
@@ -26383,7 +27245,7 @@ SELECT ID_SESION, ID_USER, DATE_SESSION, EDIT_SESSION, SESSION_STATE, SESSION_CR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26401,7 +27263,7 @@ SELECT ID_SESION, ID_USER, DATE_SESSION, EDIT_SESSION, SESSION_STATE, SESSION_CR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_SESSIONDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_SESSIONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26414,9 +27276,9 @@ SELECT ID_SESION, ID_USER, DATE_SESSION, EDIT_SESSION, SESSION_STATE, SESSION_CR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_SESSIONDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_SESSIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_SESSIONDataTable dataTable = new ControlAppDevDataSet.TBL_SESSIONDataTable();
+            ControlAppDevDataSetIsaac.TBL_SESSIONDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_SESSIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26424,14 +27286,14 @@ SELECT ID_SESION, ID_USER, DATE_SESSION, EDIT_SESSION, SESSION_STATE, SESSION_CR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_SESSIONDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_SESSIONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_SESSION");
         }
         
@@ -26877,7 +27739,7 @@ SELECT ID_STOCK, ID_PRODUCT, STOCK_INITIAL_QUANTITY, STOCK_QUANTITY, STOCK_ADJUS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26896,7 +27758,7 @@ SELECT ID_STOCK, ID_PRODUCT, STOCK_INITIAL_QUANTITY, STOCK_QUANTITY, STOCK_ADJUS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_STOCKDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_STOCKDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26909,9 +27771,9 @@ SELECT ID_STOCK, ID_PRODUCT, STOCK_INITIAL_QUANTITY, STOCK_QUANTITY, STOCK_ADJUS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_STOCKDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_STOCKDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_STOCKDataTable dataTable = new ControlAppDevDataSet.TBL_STOCKDataTable();
+            ControlAppDevDataSetIsaac.TBL_STOCKDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_STOCKDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26919,14 +27781,14 @@ SELECT ID_STOCK, ID_PRODUCT, STOCK_INITIAL_QUANTITY, STOCK_QUANTITY, STOCK_ADJUS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_STOCKDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_STOCKDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_STOCK");
         }
         
@@ -27439,7 +28301,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27458,7 +28320,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.TBL_USERDataTable dataTable) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.TBL_USERDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -27471,9 +28333,9 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.TBL_USERDataTable GetData() {
+        public virtual ControlAppDevDataSetIsaac.TBL_USERDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ControlAppDevDataSet.TBL_USERDataTable dataTable = new ControlAppDevDataSet.TBL_USERDataTable();
+            ControlAppDevDataSetIsaac.TBL_USERDataTable dataTable = new ControlAppDevDataSetIsaac.TBL_USERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27481,14 +28343,14 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet.TBL_USERDataTable dataTable) {
+        public virtual int Update(ControlAppDevDataSetIsaac.TBL_USERDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ControlAppDevDataSet dataSet) {
+        public virtual int Update(ControlAppDevDataSetIsaac dataSet) {
             return this.Adapter.Update(dataSet, "TBL_USER");
         }
         
@@ -27994,7 +28856,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28017,7 +28879,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_AREADataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_AREA, global::System.Nullable<int> pID_DPT, string pAREA_NAME) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_AREADataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_AREA, global::System.Nullable<int> pID_DPT, string pAREA_NAME) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -28060,7 +28922,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_AREADataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_AREA, global::System.Nullable<int> pID_DPT, string pAREA_NAME) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_AREADataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_AREA, global::System.Nullable<int> pID_DPT, string pAREA_NAME) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -28092,7 +28954,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[5].Value = ((string)(pAREA_NAME));
             }
-            ControlAppDevDataSet.SP_CRUD_AREADataTable dataTable = new ControlAppDevDataSet.SP_CRUD_AREADataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_AREADataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_AREADataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -28233,7 +29095,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28255,7 +29117,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_CUSTOMERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, string pID_CUSTOMER, string pCUSTOMER_NAME) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_CUSTOMERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, string pID_CUSTOMER, string pCUSTOMER_NAME) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -28292,7 +29154,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_CUSTOMERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, string pID_CUSTOMER, string pCUSTOMER_NAME) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_CUSTOMERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, string pID_CUSTOMER, string pCUSTOMER_NAME) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -28318,7 +29180,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[4].Value = ((string)(pCUSTOMER_NAME));
             }
-            ControlAppDevDataSet.SP_CRUD_CUSTOMERDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_CUSTOMERDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_CUSTOMERDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_CUSTOMERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -28464,7 +29326,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28493,7 +29355,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_CXCDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_CXC, string pID_USER, global::System.Nullable<int> pID_STOCK, global::System.Nullable<int> pQUANTITY_RETREAT, global::System.Nullable<int> pQUANTITY_RETURN, global::System.Nullable<decimal> pTOTAL_CXC, global::System.Nullable<int> pBALANCE_CXC, string pCUSTOMER_NAME, global::System.Nullable<global::System.DateTime> pDATE_STOCK) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_CXCDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_CXC, string pID_USER, global::System.Nullable<int> pID_STOCK, global::System.Nullable<int> pQUANTITY_RETREAT, global::System.Nullable<int> pQUANTITY_RETURN, global::System.Nullable<decimal> pTOTAL_CXC, global::System.Nullable<int> pBALANCE_CXC, string pCUSTOMER_NAME, global::System.Nullable<global::System.DateTime> pDATE_STOCK) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -28572,7 +29434,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_CXCDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_CXC, string pID_USER, global::System.Nullable<int> pID_STOCK, global::System.Nullable<int> pQUANTITY_RETREAT, global::System.Nullable<int> pQUANTITY_RETURN, global::System.Nullable<decimal> pTOTAL_CXC, global::System.Nullable<int> pBALANCE_CXC, string pCUSTOMER_NAME, global::System.Nullable<global::System.DateTime> pDATE_STOCK) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_CXCDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_CXC, string pID_USER, global::System.Nullable<int> pID_STOCK, global::System.Nullable<int> pQUANTITY_RETREAT, global::System.Nullable<int> pQUANTITY_RETURN, global::System.Nullable<decimal> pTOTAL_CXC, global::System.Nullable<int> pBALANCE_CXC, string pCUSTOMER_NAME, global::System.Nullable<global::System.DateTime> pDATE_STOCK) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -28640,7 +29502,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            ControlAppDevDataSet.SP_CRUD_CXCDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_CXCDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_CXCDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_CXCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -28781,7 +29643,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28803,7 +29665,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_DPTDataTable dataTable, global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_DPT, string pID_BY, string pNAME_DPT) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_DPTDataTable dataTable, global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_DPT, string pID_BY, string pNAME_DPT) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -28840,7 +29702,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_DPTDataTable GetData(global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_DPT, string pID_BY, string pNAME_DPT) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_DPTDataTable GetData(global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_DPT, string pID_BY, string pNAME_DPT) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -28866,7 +29728,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[4].Value = ((string)(pNAME_DPT));
             }
-            ControlAppDevDataSet.SP_CRUD_DPTDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_DPTDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_DPTDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_DPTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -29010,7 +29872,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29035,7 +29897,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_ORDERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ORDER, global::System.Nullable<int> pID_PREPAID, global::System.Nullable<int> pORDER_QUANTITY, global::System.Nullable<global::System.DateTime> pORDER_DATE, global::System.Nullable<bool> pORDER_DELIVERY) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_ORDERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ORDER, global::System.Nullable<int> pID_PREPAID, global::System.Nullable<int> pORDER_QUANTITY, global::System.Nullable<global::System.DateTime> pORDER_DATE, global::System.Nullable<bool> pORDER_DELIVERY) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -29090,7 +29952,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_ORDERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ORDER, global::System.Nullable<int> pID_PREPAID, global::System.Nullable<int> pORDER_QUANTITY, global::System.Nullable<global::System.DateTime> pORDER_DATE, global::System.Nullable<bool> pORDER_DELIVERY) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_ORDERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ORDER, global::System.Nullable<int> pID_PREPAID, global::System.Nullable<int> pORDER_QUANTITY, global::System.Nullable<global::System.DateTime> pORDER_DATE, global::System.Nullable<bool> pORDER_DELIVERY) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -29134,7 +29996,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            ControlAppDevDataSet.SP_CRUD_ORDERDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_ORDERDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_ORDERDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_ORDERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -29277,7 +30139,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29301,7 +30163,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_PERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PER, global::System.Nullable<int> pID_DPT, string pNAME_PER, string pDESCRIP_PER) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_PERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PER, global::System.Nullable<int> pID_DPT, string pNAME_PER, string pDESCRIP_PER) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -29350,7 +30212,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_PERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PER, global::System.Nullable<int> pID_DPT, string pNAME_PER, string pDESCRIP_PER) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_PERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PER, global::System.Nullable<int> pID_DPT, string pNAME_PER, string pDESCRIP_PER) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -29388,7 +30250,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[6].Value = ((string)(pDESCRIP_PER));
             }
-            ControlAppDevDataSet.SP_CRUD_PERDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_PERDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_PERDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_PERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -29530,7 +30392,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29553,7 +30415,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_POSITIONDataTable dataTable, global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_PST, global::System.Nullable<int> pID_AREA, string pID_BY, string pNAME_PST) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_POSITIONDataTable dataTable, global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_PST, global::System.Nullable<int> pID_AREA, string pID_BY, string pNAME_PST) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -29596,7 +30458,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_POSITIONDataTable GetData(global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_PST, global::System.Nullable<int> pID_AREA, string pID_BY, string pNAME_PST) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_POSITIONDataTable GetData(global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_PST, global::System.Nullable<int> pID_AREA, string pID_BY, string pNAME_PST) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -29628,7 +30490,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[5].Value = ((string)(pNAME_PST));
             }
-            ControlAppDevDataSet.SP_CRUD_POSITIONDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_POSITIONDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_POSITIONDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_POSITIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -29775,7 +30637,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29804,7 +30666,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_PREPAIDDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PREPAID, string pID_CUSTOMER, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<int> pPREPAID_QUANTITY, global::System.Nullable<decimal> pPREPAID_TOTAL, global::System.Nullable<decimal> pPREPAID_CASH, global::System.Nullable<decimal> pPREPAID_CHANGE, global::System.Nullable<int> pPREPAID_BALANCE, string pCUSTOMER_NAME) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_PREPAIDDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PREPAID, string pID_CUSTOMER, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<int> pPREPAID_QUANTITY, global::System.Nullable<decimal> pPREPAID_TOTAL, global::System.Nullable<decimal> pPREPAID_CASH, global::System.Nullable<decimal> pPREPAID_CHANGE, global::System.Nullable<int> pPREPAID_BALANCE, string pCUSTOMER_NAME) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -29883,7 +30745,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_PREPAIDDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PREPAID, string pID_CUSTOMER, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<int> pPREPAID_QUANTITY, global::System.Nullable<decimal> pPREPAID_TOTAL, global::System.Nullable<decimal> pPREPAID_CASH, global::System.Nullable<decimal> pPREPAID_CHANGE, global::System.Nullable<int> pPREPAID_BALANCE, string pCUSTOMER_NAME) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_PREPAIDDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PREPAID, string pID_CUSTOMER, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<int> pPREPAID_QUANTITY, global::System.Nullable<decimal> pPREPAID_TOTAL, global::System.Nullable<decimal> pPREPAID_CASH, global::System.Nullable<decimal> pPREPAID_CHANGE, global::System.Nullable<int> pPREPAID_BALANCE, string pCUSTOMER_NAME) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -29951,7 +30813,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[11].Value = ((string)(pCUSTOMER_NAME));
             }
-            ControlAppDevDataSet.SP_CRUD_PREPAIDDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_PREPAIDDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_PREPAIDDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_PREPAIDDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -30093,7 +30955,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -30116,7 +30978,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_PRODUCTDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<decimal> pTOTAL_PRODUCT, string pDESCRIP_PRICE) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_PRODUCTDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<decimal> pTOTAL_PRODUCT, string pDESCRIP_PRICE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -30159,7 +31021,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_PRODUCTDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<decimal> pTOTAL_PRODUCT, string pDESCRIP_PRICE) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_PRODUCTDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<decimal> pTOTAL_PRODUCT, string pDESCRIP_PRICE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -30191,7 +31053,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[5].Value = ((string)(pDESCRIP_PRICE));
             }
-            ControlAppDevDataSet.SP_CRUD_PRODUCTDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_PRODUCTDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_PRODUCTDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_PRODUCTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -30339,7 +31201,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -30368,7 +31230,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_RECEIPTDataTable dataTable, global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_RECEIPT, string pID_BY, global::System.Nullable<int> pID_STOCK, string pCUSTOMER_NAME, global::System.Nullable<int> pQUANTITY, global::System.Nullable<decimal> pTOTAL_RECEIPT, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<decimal> pUNIT_PRICE, global::System.Nullable<decimal> pCASH, global::System.Nullable<decimal> pCHANGE) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_RECEIPTDataTable dataTable, global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_RECEIPT, string pID_BY, global::System.Nullable<int> pID_STOCK, string pCUSTOMER_NAME, global::System.Nullable<int> pQUANTITY, global::System.Nullable<decimal> pTOTAL_RECEIPT, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<decimal> pUNIT_PRICE, global::System.Nullable<decimal> pCASH, global::System.Nullable<decimal> pCHANGE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -30447,7 +31309,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_RECEIPTDataTable GetData(global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_RECEIPT, string pID_BY, global::System.Nullable<int> pID_STOCK, string pCUSTOMER_NAME, global::System.Nullable<int> pQUANTITY, global::System.Nullable<decimal> pTOTAL_RECEIPT, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<decimal> pUNIT_PRICE, global::System.Nullable<decimal> pCASH, global::System.Nullable<decimal> pCHANGE) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_RECEIPTDataTable GetData(global::System.Nullable<int> p_ACTION, global::System.Nullable<int> pID_RECEIPT, string pID_BY, global::System.Nullable<int> pID_STOCK, string pCUSTOMER_NAME, global::System.Nullable<int> pQUANTITY, global::System.Nullable<decimal> pTOTAL_RECEIPT, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<decimal> pUNIT_PRICE, global::System.Nullable<decimal> pCASH, global::System.Nullable<decimal> pCHANGE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -30515,7 +31377,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            ControlAppDevDataSet.SP_CRUD_RECEIPTDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_RECEIPTDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_RECEIPTDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_RECEIPTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -30657,7 +31519,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -30680,7 +31542,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_ROLEDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ROLE, string pNAME_ROLE, string pDESCRIP_ROLE) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_ROLEDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ROLE, string pNAME_ROLE, string pDESCRIP_ROLE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -30723,7 +31585,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_ROLEDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ROLE, string pNAME_ROLE, string pDESCRIP_ROLE) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_ROLEDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ROLE, string pNAME_ROLE, string pDESCRIP_ROLE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -30755,7 +31617,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[5].Value = ((string)(pDESCRIP_ROLE));
             }
-            ControlAppDevDataSet.SP_CRUD_ROLEDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_ROLEDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_ROLEDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_ROLEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -30896,7 +31758,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -30920,7 +31782,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_ROLE_PERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ROLE, global::System.Nullable<int> pID_PER, string pNAME_ROLE, string pNAME_PER) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_ROLE_PERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ROLE, global::System.Nullable<int> pID_PER, string pNAME_ROLE, string pNAME_PER) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -30969,7 +31831,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_ROLE_PERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ROLE, global::System.Nullable<int> pID_PER, string pNAME_ROLE, string pNAME_PER) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_ROLE_PERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_ROLE, global::System.Nullable<int> pID_PER, string pNAME_ROLE, string pNAME_PER) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -31007,7 +31869,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[6].Value = ((string)(pNAME_PER));
             }
-            ControlAppDevDataSet.SP_CRUD_ROLE_PERDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_ROLE_PERDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_ROLE_PERDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_ROLE_PERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -31153,7 +32015,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -31180,7 +32042,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_STOCKDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_STOCK, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<int> pSTOCK_INITIAL_QUANTITY, global::System.Nullable<int> pSTOCK_QUANTITY, global::System.Nullable<int> pSTOCK_ADJUSTMENT, global::System.Nullable<global::System.DateTime> pSTOCK_DATE_PRODUCT, global::System.Nullable<bool> pSTOCK_COUNTER) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_STOCKDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_STOCK, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<int> pSTOCK_INITIAL_QUANTITY, global::System.Nullable<int> pSTOCK_QUANTITY, global::System.Nullable<int> pSTOCK_ADJUSTMENT, global::System.Nullable<global::System.DateTime> pSTOCK_DATE_PRODUCT, global::System.Nullable<bool> pSTOCK_COUNTER) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -31247,7 +32109,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_STOCKDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_STOCK, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<int> pSTOCK_INITIAL_QUANTITY, global::System.Nullable<int> pSTOCK_QUANTITY, global::System.Nullable<int> pSTOCK_ADJUSTMENT, global::System.Nullable<global::System.DateTime> pSTOCK_DATE_PRODUCT, global::System.Nullable<bool> pSTOCK_COUNTER) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_STOCKDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_STOCK, global::System.Nullable<int> pID_PRODUCT, global::System.Nullable<int> pSTOCK_INITIAL_QUANTITY, global::System.Nullable<int> pSTOCK_QUANTITY, global::System.Nullable<int> pSTOCK_ADJUSTMENT, global::System.Nullable<global::System.DateTime> pSTOCK_DATE_PRODUCT, global::System.Nullable<bool> pSTOCK_COUNTER) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -31303,7 +32165,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            ControlAppDevDataSet.SP_CRUD_STOCKDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_STOCKDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_STOCKDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_STOCKDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -31451,7 +32313,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionString1;
+            this._connection.ConnectionString = global::ControlApp.DataAccess.Properties.Settings.Default.ControlAppDevConnectionStringIsaac;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -31480,7 +32342,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_USERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, string pID_USER, string pUSER_NAME, string pUSER_EMAIL, global::System.Nullable<int> pID_DPT, global::System.Nullable<int> pID_AREA, global::System.Nullable<int> pID_PST, global::System.Nullable<int> pID_ROLE, string pUSER_NICKNAME, string pUSER_PASSWORD) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_USERDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, string pID_USER, string pUSER_NAME, string pUSER_EMAIL, global::System.Nullable<int> pID_DPT, global::System.Nullable<int> pID_AREA, global::System.Nullable<int> pID_PST, global::System.Nullable<int> pID_ROLE, string pUSER_NICKNAME, string pUSER_PASSWORD) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -31559,7 +32421,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_USERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, string pID_USER, string pUSER_NAME, string pUSER_EMAIL, global::System.Nullable<int> pID_DPT, global::System.Nullable<int> pID_AREA, global::System.Nullable<int> pID_PST, global::System.Nullable<int> pID_ROLE, string pUSER_NICKNAME, string pUSER_PASSWORD) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_USERDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, string pID_USER, string pUSER_NAME, string pUSER_EMAIL, global::System.Nullable<int> pID_DPT, global::System.Nullable<int> pID_AREA, global::System.Nullable<int> pID_PST, global::System.Nullable<int> pID_ROLE, string pUSER_NICKNAME, string pUSER_PASSWORD) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -31627,7 +32489,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[11].Value = ((string)(pUSER_PASSWORD));
             }
-            ControlAppDevDataSet.SP_CRUD_USERDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_USERDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_USERDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_USERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -31795,7 +32657,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ControlAppDevDataSet.SP_CRUD_NOTEDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_NOTE, string pNOTE_TITLE, global::System.Nullable<global::System.DateTime> pNOTE_DATE, string pNOTE_CONTENT, global::System.Nullable<bool> pNOTE_STATE) {
+        public virtual int Fill(ControlAppDevDataSetIsaac.SP_CRUD_NOTEDataTable dataTable, global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_NOTE, string pNOTE_TITLE, global::System.Nullable<global::System.DateTime> pNOTE_DATE, string pNOTE_CONTENT, global::System.Nullable<bool> pNOTE_STATE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -31850,7 +32712,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ControlAppDevDataSet.SP_CRUD_NOTEDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_NOTE, string pNOTE_TITLE, global::System.Nullable<global::System.DateTime> pNOTE_DATE, string pNOTE_CONTENT, global::System.Nullable<bool> pNOTE_STATE) {
+        public virtual ControlAppDevDataSetIsaac.SP_CRUD_NOTEDataTable GetData(global::System.Nullable<int> p_ACTION, string pID_BY, global::System.Nullable<int> pID_NOTE, string pNOTE_TITLE, global::System.Nullable<global::System.DateTime> pNOTE_DATE, string pNOTE_CONTENT, global::System.Nullable<bool> pNOTE_STATE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((p_ACTION.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(p_ACTION.Value));
@@ -31894,7 +32756,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             else {
                 this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            ControlAppDevDataSet.SP_CRUD_NOTEDataTable dataTable = new ControlAppDevDataSet.SP_CRUD_NOTEDataTable();
+            ControlAppDevDataSetIsaac.SP_CRUD_NOTEDataTable dataTable = new ControlAppDevDataSetIsaac.SP_CRUD_NOTEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -31921,6 +32783,8 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         private TBL_CXCTableAdapter _tBL_CXCTableAdapter;
         
         private TBL_DPTTableAdapter _tBL_DPTTableAdapter;
+        
+        private TBL_NOTETableAdapter _tBL_NOTETableAdapter;
         
         private TBL_ORDERTableAdapter _tBL_ORDERTableAdapter;
         
@@ -32026,6 +32890,20 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             }
             set {
                 this._tBL_DPTTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public TBL_NOTETableAdapter TBL_NOTETableAdapter {
+            get {
+                return this._tBL_NOTETableAdapter;
+            }
+            set {
+                this._tBL_NOTETableAdapter = value;
             }
         }
         
@@ -32222,6 +33100,10 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                             && (this._tBL_DPTTableAdapter.Connection != null))) {
                     return this._tBL_DPTTableAdapter.Connection;
                 }
+                if (((this._tBL_NOTETableAdapter != null) 
+                            && (this._tBL_NOTETableAdapter.Connection != null))) {
+                    return this._tBL_NOTETableAdapter.Connection;
+                }
                 if (((this._tBL_ORDERTableAdapter != null) 
                             && (this._tBL_ORDERTableAdapter.Connection != null))) {
                     return this._tBL_ORDERTableAdapter.Connection;
@@ -32294,6 +33176,9 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                 if ((this._tBL_DPTTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._tBL_NOTETableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._tBL_ORDERTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -32336,7 +33221,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(ControlAppDevDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ControlAppDevDataSetIsaac dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tBL_DPTTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TBL_DPT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -32383,15 +33268,6 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tBL_PRODUCTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TBL_PRODUCT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tBL_PRODUCTTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._tBL_CUSTOMERTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TBL_CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -32401,12 +33277,21 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tBL_PERMISSIONTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TBL_PERMISSION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tBL_PRODUCTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TBL_PRODUCT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tBL_PERMISSIONTableAdapter.Update(updatedRows));
+                    result = (result + this._tBL_PRODUCTTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tBL_STOCKTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TBL_STOCK.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tBL_STOCKTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -32419,12 +33304,12 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tBL_STOCKTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TBL_STOCK.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tBL_PERMISSIONTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TBL_PERMISSION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tBL_STOCKTableAdapter.Update(updatedRows));
+                    result = (result + this._tBL_PERMISSIONTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -32473,6 +33358,15 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tBL_NOTETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TBL_NOTE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tBL_NOTETableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tBL_CXCTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TBL_CXC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -32490,7 +33384,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(ControlAppDevDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ControlAppDevDataSetIsaac dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tBL_DPTTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TBL_DPT.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -32532,14 +33426,6 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tBL_PRODUCTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TBL_PRODUCT.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tBL_PRODUCTTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._tBL_CUSTOMERTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TBL_CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -32548,11 +33434,19 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tBL_PERMISSIONTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TBL_PERMISSION.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tBL_PRODUCTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TBL_PRODUCT.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tBL_PERMISSIONTableAdapter.Update(addedRows));
+                    result = (result + this._tBL_PRODUCTTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tBL_STOCKTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TBL_STOCK.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tBL_STOCKTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -32564,11 +33458,11 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tBL_STOCKTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TBL_STOCK.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tBL_PERMISSIONTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TBL_PERMISSION.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tBL_STOCKTableAdapter.Update(addedRows));
+                    result = (result + this._tBL_PERMISSIONTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -32612,6 +33506,14 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tBL_NOTETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TBL_NOTE.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tBL_NOTETableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tBL_CXCTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TBL_CXC.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -32628,13 +33530,21 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(ControlAppDevDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ControlAppDevDataSetIsaac dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._tBL_CXCTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TBL_CXC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tBL_CXCTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tBL_NOTETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TBL_NOTE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tBL_NOTETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -32678,11 +33588,11 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tBL_STOCKTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TBL_STOCK.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tBL_PERMISSIONTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TBL_PERMISSION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tBL_STOCKTableAdapter.Update(deletedRows));
+                    result = (result + this._tBL_PERMISSIONTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -32694,19 +33604,11 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tBL_PERMISSIONTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TBL_PERMISSION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tBL_STOCKTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TBL_STOCK.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tBL_PERMISSIONTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tBL_CUSTOMERTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TBL_CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tBL_CUSTOMERTableAdapter.Update(deletedRows));
+                    result = (result + this._tBL_STOCKTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -32715,6 +33617,14 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tBL_PRODUCTTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tBL_CUSTOMERTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TBL_CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tBL_CUSTOMERTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -32790,7 +33700,7 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(ControlAppDevDataSet dataSet) {
+        public virtual int UpdateAll(ControlAppDevDataSetIsaac dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -32819,6 +33729,11 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
             }
             if (((this._tBL_DPTTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tBL_DPTTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._tBL_NOTETableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tBL_NOTETableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -32952,6 +33867,15 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                     if (this._tBL_DPTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._tBL_DPTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tBL_DPTTableAdapter.Adapter);
+                    }
+                }
+                if ((this._tBL_NOTETableAdapter != null)) {
+                    revertConnections.Add(this._tBL_NOTETableAdapter, this._tBL_NOTETableAdapter.Connection);
+                    this._tBL_NOTETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tBL_NOTETableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tBL_NOTETableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tBL_NOTETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tBL_NOTETableAdapter.Adapter);
                     }
                 }
                 if ((this._tBL_ORDERTableAdapter != null)) {
@@ -33130,6 +34054,10 @@ SELECT ID_USER, USER_NAME, USER_EMAIL, ID_DPT, ID_AREA, ID_POSITION, ID_ROLE, US
                 if ((this._tBL_DPTTableAdapter != null)) {
                     this._tBL_DPTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tBL_DPTTableAdapter]));
                     this._tBL_DPTTableAdapter.Transaction = null;
+                }
+                if ((this._tBL_NOTETableAdapter != null)) {
+                    this._tBL_NOTETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tBL_NOTETableAdapter]));
+                    this._tBL_NOTETableAdapter.Transaction = null;
                 }
                 if ((this._tBL_ORDERTableAdapter != null)) {
                     this._tBL_ORDERTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tBL_ORDERTableAdapter]));

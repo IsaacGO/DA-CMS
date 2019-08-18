@@ -12,11 +12,19 @@ namespace ControlApp.Presentation.Controllers
     {
         UserManagement mUser = new UserManagement();
         // GET: Prueba
-        public ActionResult Login() { return View(); }
+        public ActionResult Login() { return View(new User { ID_User = "0" }); }
 
-        public ActionResult Authentication(string Username, string Password)
+        [HttpPost]
+        public ActionResult Login(string Username, string Password)
         {
+            if (Authentication(Username, Password))
+                return RedirectToAction("Index");
+            else
+                return View(new User { ID_User = "-1" } );
+        }
 
+        public bool Authentication(string Username, string Password)
+        {
             var list = mUser.RetrieveAllUser<User>();
 
             if (list.Count > 0)
@@ -28,15 +36,17 @@ namespace ControlApp.Presentation.Controllers
                         Session["username"] = Username;
                         Session["idUser"] = obj.ID_User;
        
-                        return RedirectToAction("Index");
+                        return true;
                     }
-
                 }
             }
-
-            return RedirectToAction("Login");
+            return false;
         }
-        public ActionResult Index() { return View(); }
+        public ActionResult Index()
+        {
+            ViewBag.username = Session["username"];
+            return View();
+        }
 
         
     }

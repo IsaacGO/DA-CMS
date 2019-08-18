@@ -46,6 +46,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlAppDevDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ControlAppDevDataSetIsaac.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ControlAppDevDataSetIsaac.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Crud\CrudAccountreceivable.cs" />
     <Compile Include="Crud\CrudActionEnum.cs" />
     <Compile Include="Crud\CrudArea.cs" />
@@ -89,6 +94,17 @@
     </None>
     <None Include="ControlAppDevDataSet.xss">
       <DependentUpon>ControlAppDevDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ControlAppDevDataSetIsaac.xsc">
+      <DependentUpon>ControlAppDevDataSetIsaac.xsd</DependentUpon>
+    </None>
+    <None Include="ControlAppDevDataSetIsaac.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ControlAppDevDataSetIsaac.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ControlAppDevDataSetIsaac.xss">
+      <DependentUpon>ControlAppDevDataSetIsaac.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

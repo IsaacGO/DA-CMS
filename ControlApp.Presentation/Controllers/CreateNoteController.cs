@@ -16,45 +16,43 @@ namespace ControlApp.Presentation.Controllers
         public ActionResult CreateNote()
         {
             ViewBag.username = Session["username"];
-            Note ObjNote = new Note();
-            ObjNote.Note_Date = Convert.ToDateTime(DateTime.Now);
-            return View(ObjNote);
+            return View(mNote.RetrieveAll<Note>());
         }
-        [HttpPost]
-        public ActionResult Cancel() { return View("CreateNote"); }
-
-        [HttpPost]
-        public ActionResult Submit([Bind(Include = "Id_Note, Note_Title, Note_Content, Note_Date, State")] Note pNote)
+        
+        public ActionResult EditNote(int? id)
         {
-            Note ObjNote = new Note();
-            ObjNote = pNote;
-            ObjNote.Note_Date = Convert.ToDateTime(DateTime.Now);
-            ObjNote.CreateBy = (string)Session["username"];
-            mNote.Create(ObjNote);
-            //ViewBag.Msg = "Created Note";
-            return View("CreateNote");
+            ViewBag.username = Session["username"];
+            if (id == -1) { return View(); }
+            else
+            {
+                Note n = new Note { ID_Note = Convert.ToInt32(id) };
+                var lst = mNote.RetrieveAllById<Note>(n);
+                return View(lst[0]);
+            }
         }
 
         [HttpPost]
-        public ActionResult Modify([Bind(Include = "Id_Note, Note_Title, Note_Content, Note_Date, State")] Note pNote)
+        public ActionResult EditNote([Bind(Include = "ID_Note,Note_Title,Note_Date,Note_Content,State")] Note n)
         {
-            Note ObjNote = new Note();
-            ObjNote = pNote;
-            ObjNote.UpdateBy = (string)Session["username"];
-            mNote.Update(ObjNote);
-            //ViewBag.Msg = "Modified Note";
-            return RedirectToAction("ShowView", ObjNote);
+            Note ObjNote = n;
+            if (n.ID_Note == 0)
+            {
+                ObjNote.CreateBy = (string)Session["username"];
+                mNote.Create(ObjNote);
+            }
+            else
+            {
+                ObjNote.UpdateBy = (string)Session["username"];
+                mNote.Update(ObjNote);
+                if (n.State != null)
+                {
+                    if (n.State == true)
+                        mNote.Activate(ObjNote);
+                    else
+                        mNote.Delete(ObjNote);
+                }
+            }
+            return RedirectToAction("CreateNote");
         }
-
-        [HttpPost]
-        public ActionResult Consult([Bind(Include = "Id_Note, Note_Title, Note_Content, Note_Date, State")] Note pNote)
-        {
-            Note n = new Note { ID_Note = Convert.ToInt32(pNote.ID_Note) };
-            var lst = mNote.RetrieveAllById<Note>(n);
-            return RedirectToAction("ShowView", lst[0]);
-        }
-
-        public ActionResult ShowView(Note Obj) { return View("CreateNote", Obj); }
-
     }
 }

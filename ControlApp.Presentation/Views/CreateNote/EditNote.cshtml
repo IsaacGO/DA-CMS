@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ControlApp.Entities.Objects.Note>
+﻿@model ControlApp.Entities.Objects.Note
 
 @{
     ViewBag.Title = "CreateNote";
@@ -94,63 +94,87 @@
             </div>
             <!-- /top navigation -->
             <!-- page content -->
+            @using (Html.BeginForm())
+            {
             <div class="right_col" role="main">
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
                             <h3>Note Information</h3>
                         </div>
+
                     </div>
                     <div class="clearfix"></div>
+
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <ul class="nav navbar-right panel_toolbox"></ul>
 
-                                <div class="form-horizontal form-label-left" novalidate>
+                                
+                                <div class="form-horizontal form-label-left" validate>
+
                                     <div class="item form-group">
-                                        <p>
-                                            @Html.ActionLink("Create New", "EditNote", new { id=-1 })
-                                        </p>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Name_User">
+                                            Title <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            @Html.TextBoxFor(x => x.ID_Note, new { @style = "display:none"})
+                                            @Html.TextBoxFor(x => x.Note_Title, new { @class = "form-control col-md-7 col-xs-12", type = "text", name = "pNote_Title", autocomplete = "off", required = "required" })
+                                        </div>
                                     </div>
                                     <div class="item form-group">
-                                        <table class="table item form-group">
-                                            <tr>
-                                                <th>
-                                                    @Html.DisplayNameFor(model => model.State)
-                                                </th>
-                                                <th>
-                                                    Title
-                                                </th>
-                                                <th>
-                                                    Date
-                                                </th>
-                                                <th>
-                                                    Content
-                                                </th>
-                                                <th></th>
-                                            </tr>
-                                            @foreach (var item in Model)
-                                            {
-                                                <tr>
-                                                    <td>
-                                                        @item.State
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Note_Title)
-                                                    </td>
-                                                    <td>
-                                                        @item.Note_Date.ToString("dd/MM/yyyy")
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Note_Content)
-                                                    </td>
-                                                    <td>
-                                                        @Html.ActionLink("Edit", "EditNote", new { id=item.ID_Note })
-                                                    </td>
-                                                </tr>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Date">
+                                            Date <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            @{
+                                                if (Model == null)
+                                                {@Html.TextBoxFor(x => x.Note_Date, new { @class = "form-control col-md-7 col-xs-12", type = "date", name = "pNote_Date", autocomplete = "off", required = "required" })}
+                                                else
+                                                {@Html.TextBoxFor(x => x.Note_Date, new { @readonly = "readonly"})}
                                             }
-                                        </table>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Note_Content">
+                                            Content Note <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            @Html.TextAreaFor(x => x.Note_Content, new { @class = "form-control col-md-7 col-xs-12", style = "min-width:280px; max-width:500px; min-height:100px; max-height:500px;", name = "pNote_Content", autocomplete = "off", required = "required" })
+                                        </div>
+                                    </div>
+
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="State_Area">
+                                            State <span class="required">*</span>
+                                        </label>
+                                        <div class="item form-group">
+                                            @{
+                                                if (Model != null)
+                                                {
+                                                    if (Convert.ToBoolean(Model.State))
+                                                    {@Html.EditorFor(x => x.State, new { @class = "form-control checkbox-inline", type = "checkbox", @checked = "checked" });}
+                                                    else
+                                                    {@Html.EditorFor(x => x.State, new { @class = "form-control checkbox-inline", type = "checkbox" });}
+                                                }
+                                                else
+                                                {@Html.TextBoxFor(x => x.State, new { @class = "checkbox-inline", type = "checkbox" });}
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="ln_solid"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            @{
+                                                if (Model == null)
+                                                {<input type="submit" value="Submit" class="btn btn-success" id="btnSubmit"/>}
+                                                else
+                                                {<input type="submit" value="Modify" class="btn btn-success" id="btnModify"/>}
+                                            }
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -158,24 +182,26 @@
                     </div>
                 </div>
             </div>
+            }
             <!-- /page content -->
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="~/Scripts/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="~/Scripts/Fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="~/Scripts/Nprogress.js"></script>
-    <!-- validator -->
-    <script src="~/Scripts/validator.js"></script>
-    <!-- jQuery Smart Wizard -->
-    <script src="~/Scripts/jquery.smartWizard.js"></script>
-    <!-- Custom Theme Scripts -->
-    <script src="~/Scripts/Custom.min.js"></script>
+        <!-- jQuery -->
+        <script src="~/Scripts/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="~/Scripts/Fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="~/Scripts/Nprogress.js"></script>
+        <!-- validator -->
+        <script src="~/Scripts/validator.js"></script>
+        <!-- jQuery Smart Wizard -->
+        <script src="~/Scripts/jquery.smartWizard.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="~/Scripts/Custom.min.js"></script>
 
 </body>
 </html>
+

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ControlAppDev" Class="sqlConnectionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=FERNANDA;Initial Catalog=ControlAppDev;Integrated Security=True" SettingsObjectName="ControlApp.DataAccess.Properties.Settings" SettingsPropertyName="ControlAppDevConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-T2RJDV7L;Initial Catalog=ControlAppDev;Integrated Security=True" SettingsObjectName="ControlApp.DataAccess.Properties.Settings" SettingsPropertyName="ControlAppDevConnectionStringIsaac" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[Log]" Member="Logs">
     <Type Name="Log">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
@@ -573,6 +573,7 @@
     <Parameter Name="pNOTE_TITLE" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="pNOTE_DATE" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="pNOTE_CONTENT" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="pNOTE_STATE" Type="System.Boolean" DbType="Bit" />
     <ElementType Name="SP_CRUD_NOTEResult">
       <Column Name="ID_NOTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NOTE_TITLE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
